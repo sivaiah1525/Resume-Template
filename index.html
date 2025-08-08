@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sivaiah J G - Angular Frontend Developer</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        body { background-color: #fff; color: #222; }
+        nav { position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background: #fff; box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05); }
+        nav .logo { font-size: 20px; font-weight: bold; }
+        nav ul { list-style: none; display: flex; gap: 25px; }
+        nav ul li a { text-decoration: none; color: #333; font-weight: 500; }
+        nav ul li a.active { border-bottom: 2px solid #3b82f6; padding-bottom: 2px; }
+        section { padding: 60px 80px; }
+        .hero { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; min-height: 80vh; }
+        .hero-text { max-width: 500px; }
+        .hero-text h1 { font-size: 40px; font-weight: bold; }
+        .hero-text h1 span { color: #3b82f6; }
+        .hero-text p { margin: 20px 0; font-size: 18px; color: #555; }
+        .hero-text button { background: #3b82f6; color: #fff; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-size: 16px; }
+        .hero-img { background: #3b82f6; padding: 20px; border-radius: 50%; }
+        .hero-img img { width: 250px; border-radius: 50%; }
+        h2 { font-size: 28px; margin-bottom: 20px; color: #222; }
+        p { line-height: 1.6; color: #444; margin-bottom: 15px; }
+        .skills-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; }
+        .skill-item { padding: 15px; border: 1px solid #ddd; border-radius: 8px; text-align: center; background: #fff; transition: 0.3s; }
+        .skill-item:hover { background: #3b82f6; color: white; border-color: #3b82f6; }
+        .works-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .work-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: 0.3s; }
+        .work-card img { width: 100%; height: 180px; object-fit: cover; }
+        .work-card h4 { padding: 10px; }
+        .work-card:hover { transform: translateY(-5px); }
+        .contact-form { max-width: 500px; }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 6px; }
+        .contact-form button { background: #3b82f6; color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; }
+        footer { padding: 20px 80px; display: flex; gap: 15px; font-size: 20px; justify-content: center; border-top: 1px solid #eee; }
+        footer a { text-decoration: none; color: #333; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Sivaiah J G</div>
+        <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#works">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <h1>Hi, I’m <span>Sivaiah</span><br>Angular Frontend Developer</h1>
+            <p>A dedicated Angular Frontend Developer with 4 years of experience in building responsive, scalable, and high-performance web applications.</p>
+            <button onclick="document.getElementById('contact').scrollIntoView()">Contact</button>
+        </div>
+        <div class="hero-img">
+            <img src="./src/Profile.jfif" alt="Profile">
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Passionate about crafting clean, intuitive user interfaces and continuously optimizing application performance. Seeking to bring my expertise and enthusiasm to a dynamic and collaborative development team.</p>
+        <p><strong>Address:</strong> No: 240, Katchur, Kovil Street, Outhukottai, Thiruvallur, 602026</p>
+        <p><strong>Email:</strong> sivagopi821@gmail.com</p>
+        <p><strong>Phone:</strong> 9344134674</p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sivaiah1525" target="_blank">linkedin.com/in/sivaiah1525</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/sivaiah1525" target="_blank">github.com/sivaiah1525</a></p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-list">
+            <div class="skill-item">HTML5</div>
+            <div class="skill-item">CSS4</div>
+            <div class="skill-item">JavaScript</div>
+            <div class="skill-item">Angular 15+</div>
+            <div class="skill-item">Angular Material</div>
+            <div class="skill-item">Bootstrap 4 & 5</div>
+            <div class="skill-item">Google Icons</div>
+            <div class="skill-item">Ionic Framework</div>
+            <div class="skill-item">Cordova</div>
+            <div class="skill-item">HTTP APIs</div>
+            <div class="skill-item">Ngx Data Tables</div>
+            <div class="skill-item">AGM Maps</div>
+            <div class="skill-item">Canvas Charts</div>
+            <div class="skill-item">AWS S3 Deployment</div>
+        </div>
+    </section>
+
+    <section id="works">
+        <h2>Projects</h2>
+        <div class="works-gallery">
+            <div class="work-card">
+                <img src="https://via.placeholder.com/400x200" alt="Leanresto">
+                <h4>Leanresto - Restaurant Food Booking (Ionic 7, Angular Calendar, Google Map, NGX Charts)</h4>
+                <p><a href="https://leanresto.com" target="_blank">View Project</a></p>
+            </div>
+            <div class="work-card">
+                <img src="https://via.placeholder.com/400x200" alt="Planning & Me">
+                <h4>Planning & Me - CRM (Angular 14, Angular Calendar, Google Map, NGX Charts)</h4>
+                <p><a href="https://www.planningandme.com" target="_blank">View Project</a></p>
+            </div>
+            <div class="work-card">
+                <img src="https://via.placeholder.com/400x200" alt="Onssen Data">
+                <h4>Onssen Data & API - ECommerce Site (Angular 16)</h4>
+                <p><a href="http://onssen-ui.s3-website.eu-west-3.amazonaws.com/" target="_blank">View Project</a></p>
+            </div>
+            <div class="work-card">
+                <img src="https://via.placeholder.com/400x200" alt="UTM Builder">
+                <h4>UTM Builder - Campaign Creation & Tracking (Angular 16)</h4>
+                <p><a href="https://www.leadgourmet.com/login" target="_blank">View Project</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <a href="https://www.linkedin.com/in/sivaiah1525" target="_blank">LinkedIn</a>
+        <a href="https://github.com/sivaiah1525" target="_blank">GitHub</a>
+    </footer>
+
+</body>
+</html>
