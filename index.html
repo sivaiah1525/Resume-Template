@@ -1,137 +1,415 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sivaiah J G - Angular Frontend Developer</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
-        body { background-color: #fff; color: #222; }
-        nav { position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background: #fff; box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05); }
-        nav .logo { font-size: 20px; font-weight: bold; }
-        nav ul { list-style: none; display: flex; gap: 25px; }
-        nav ul li a { text-decoration: none; color: #333; font-weight: 500; }
-        nav ul li a.active { border-bottom: 2px solid #3b82f6; padding-bottom: 2px; }
-        section { padding: 60px 80px; }
-        .hero { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; min-height: 80vh; }
-        .hero-text { max-width: 500px; }
-        .hero-text h1 { font-size: 40px; font-weight: bold; }
-        .hero-text h1 span { color: #3b82f6; }
-        .hero-text p { margin: 20px 0; font-size: 18px; color: #555; }
-        .hero-text button { background: #3b82f6; color: #fff; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-size: 16px; }
-        .hero-img { background: #3b82f6; padding: 20px; border-radius: 50%; }
-        .hero-img img { width: 250px; border-radius: 50%; }
-        h2 { font-size: 28px; margin-bottom: 20px; color: #222; }
-        p { line-height: 1.6; color: #444; margin-bottom: 15px; }
-        .skills-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; }
-        .skill-item { padding: 15px; border: 1px solid #ddd; border-radius: 8px; text-align: center; background: #fff; transition: 0.3s; }
-        .skill-item:hover { background: #3b82f6; color: white; border-color: #3b82f6; }
-        .works-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .work-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: 0.3s; }
-        .work-card img { width: 100%; height: 180px; object-fit: cover; }
-        .work-card h4 { padding: 10px; }
-        .work-card:hover { transform: translateY(-5px); }
-        .contact-form { max-width: 500px; }
-        .contact-form input, .contact-form textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 6px; }
-        .contact-form button { background: #3b82f6; color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; }
-        footer { padding: 20px 80px; display: flex; gap: 15px; font-size: 20px; justify-content: center; border-top: 1px solid #eee; }
-        footer a { text-decoration: none; color: #333; }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sivaiah J G — Resume</title>
+
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- html2pdf (for download as PDF) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+
+  <style>
+    :root{
+      --accent:#0ea5e9;
+      --dark:#0f172a;
+      --muted:#475569;
+      --page-width:900px;
+      --gutter:22px;
+    }
+    html,body{
+      margin:0;
+      padding:0;
+      font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+      color:var(--dark);
+      background:#f7fbff;
+    }
+    .wrap{
+      max-width:var(--page-width);
+      margin:28px auto;
+      background:white;
+      box-shadow:0 8px 30px rgba(15,23,42,0.06);
+      border-radius:10px;
+      padding:28px;
+      box-sizing:border-box;
+    }
+
+    /* Header */
+    .header{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:12px;
+      border-bottom:3px solid rgba(14,165,233,0.06);
+      padding-bottom:12px;
+    }
+    .name{
+      font-size:28px;
+      font-weight:700;
+      letter-spacing:0.2px;
+    }
+    .contact{
+      text-align:right;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .contact a{ color:var(--accent); text-decoration:none; }
+
+    /* layout */
+    .main{
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:var(--gutter);
+      margin-top:18px;
+    }
+    @media (max-width:980px){
+      .main{ grid-template-columns: 1fr; }
+      .contact{ text-align:left; margin-top:6px; }
+    }
+
+    /* Left column content */
+    .section{
+      margin-bottom:16px;
+    }
+    .section-title{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      background:#e6f8ff;
+      border-left:6px solid var(--accent);
+      padding:8px 12px;
+      border-radius:6px;
+      margin-bottom:10px;
+      font-size:16px;
+      font-weight:700;
+      color:var(--dark);
+    }
+    .section-title .material-icons{ color:var(--accent); font-size:20px; }
+
+    .summary{
+      font-size:14px;
+      line-height:1.45;
+      color:var(--dark);
+    }
+
+    /* numbered steps */
+    .step-list{
+      counter-reset:step;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+    .step-list li{
+      display:flex;
+      gap:12px;
+      margin:8px 0;
+      align-items:flex-start;
+    }
+    .step-list li:before{
+      counter-increment:step;
+      content: counter(step);
+      min-width:34px;
+      height:34px;
+      border-radius:8px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,var(--accent), #60c6ff);
+      color:white;
+      font-weight:700;
+      font-size:14px;
+      box-shadow:0 4px 10px rgba(14,165,233,0.12);
+    }
+    .bullet-text{ font-size:14px; color:var(--dark); line-height:1.45; }
+
+    /* Right column */
+    .aside{
+      background:#fbfdff;
+      padding:14px;
+      border-radius:8px;
+      border:1px solid rgba(14,165,233,0.06);
+    }
+    .tag-row{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+    .tag{ padding:6px 8px; background:rgba(14,165,233,0.08); color:var(--accent); border-radius:6px; font-weight:600; font-size:13px; }
+
+    .small{ font-size:13px; color:var(--muted); margin-bottom:6px; }
+
+    /* experience */
+    .job{
+      margin-bottom:12px;
+    }
+    .job .title{ font-weight:700; color:var(--dark); }
+    .job .meta{ font-size:12px; color:var(--muted); margin-bottom:8px; }
+
+    .num-bullets{ margin:0; padding:0; list-style:none; }
+    .num-bullets li{
+      display:flex;
+      gap:10px;
+      margin:6px 0;
+      align-items:flex-start;
+    }
+    .num-bullets li .num{
+      width:22px;height:22px;border-radius:6px;background:var(--accent);color:white;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;
+    }
+
+    /* footer / actions */
+    .actions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      margin-top:14px;
+    }
+    .btn{
+      background:var(--accent);
+      color:white;
+      border:none;
+      padding:10px 14px;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:700;
+      box-shadow:0 6px 18px rgba(14,165,233,0.12);
+    }
+    .btn:active{ transform:translateY(1px); }
+    .btn-outline{
+      background:transparent;
+      color:var(--dark);
+      border:1px solid rgba(15,23,42,0.06);
+      padding:9px 12px;
+      font-weight:600;
+      border-radius:8px;
+    }
+
+    /* printable page tweaks */
+    @media print{
+      body{ background:white; }
+      .wrap{ box-shadow:none; border-radius:0; margin:0; padding:8mm; }
+      .actions{ display:none; }
+    }
+  </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">Sivaiah J G</div>
-        <ul>
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#works">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+  <div class="wrap" id="resume-root">
+    <div class="header">
+      <div>
+        <div class="name">Sivaiah J G</div>
+        <div style="color:var(--muted); margin-top:4px; font-size:14px;">Software Developer — Angular & Ionic</div>
+      </div>
 
-    <section id="home" class="hero">
-        <div class="hero-text">
-            <h1>Hi, I’m <span>Sivaiah</span><br>Angular Frontend Developer</h1>
-            <p>A dedicated Angular Frontend Developer with 4 years of experience in building responsive, scalable, and high-performance web applications.</p>
-            <button onclick="document.getElementById('contact').scrollIntoView()">Contact</button>
+      <div class="contact">
+        Thiruvallur, Tamil Nadu<br>
+        <a href="tel:9344134674">9344134674</a> • <a href="mailto:sivagopi821@gmail.com">sivagopi821@gmail.com</a><br>
+        <a href="https://www.linkedin.com/in/sivaiah1525" target="_blank">linkedin.com/in/sivaiah1525</a> •
+        <a href="https://github.com/sivaiah1525" target="_blank">github.com/sivaiah1525</a>
+      </div>
+    </div>
+
+    <div class="main">
+      <!-- LEFT -->
+      <div>
+
+        <!-- Summary -->
+        <div class="section">
+          <div class="section-title"><span class="material-icons">badge</span> Professional Summary</div>
+          <div class="summary">
+            Frontend Developer with <strong>3.6 years</strong> building responsive, high-performance web & mobile apps using <strong>Angular</strong> and <strong>Ionic</strong>. Strong in UI/UX, state management with RxJS, REST API integration, and performance optimizations. Comfortable building entire feature flows end-to-end and improving developer productivity through reusable component libraries.
+          </div>
         </div>
-        <div class="hero-img">
-            <img src="./src/Profile.jfif" alt="Profile">
+
+        <!-- Experience -->
+        <div class="section">
+          <div class="section-title"><span class="material-icons">work_outline</span> Experience</div>
+
+          <div class="job">
+            <div class="title">Sinuous Technology Pvt Ltd — <span style="font-weight:700">Angular Developer</span></div>
+            <div class="meta">Dec 2022 – Present</div>
+            <ol class="num-bullets">
+              <li><div class="num">1</div><div class="bullet-text">Designed and shipped responsive web & mobile features using Angular + Ionic.</div></li>
+              <li><div class="num">2</div><div class="bullet-text">Boosted load times via lazy-loading modules and optimizing RxJS streams.</div></li>
+              <li><div class="num">3</div><div class="bullet-text">Built reusable UI components (tables, filters, modal flows) improving dev speed.</div></li>
+              <li><div class="num">4</div><div class="bullet-text">Integrated Google Maps, NGX Charts, and Data Tables across modules.</div></li>
+            </ol>
+            <div class="small"><strong>Tech:</strong> Angular 16, Ionic, RxJS, NGX Charts, Google Maps, GitHub</div>
+          </div>
+
+          <div class="job">
+            <div class="title">TVS Sundram Fasteners — <span style="font-weight:700">System Software Admin</span></div>
+            <div class="meta">Jan 2021 – Dec 2022</div>
+            <ol class="num-bullets">
+              <li><div class="num">1</div><div class="bullet-text">Maintained Windows & Linux environments; applied security patches and fixes.</div></li>
+              <li><div class="num">2</div><div class="bullet-text">Automated routine checks and improved incident response turnaround.</div></li>
+            </ol>
+            <div class="small"><strong>Tech:</strong> Windows • Linux • Scripting</div>
+          </div>
+
+          <div class="job">
+            <div class="title">Inovatric Technology Pvt Ltd — <span style="font-weight:700">Junior Angular Developer</span></div>
+            <div class="meta">Feb 2020 – Jan 2021</div>
+            <ol class="num-bullets">
+              <li><div class="num">1</div><div class="bullet-text">Created reusable Angular components & services for multiple projects.</div></li>
+              <li><div class="num">2</div><div class="bullet-text">Implemented REST API integrations and state handling with Observables.</div></li>
+            </ol>
+            <div class="small"><strong>Tech:</strong> Angular, TypeScript, REST APIs</div>
+          </div>
         </div>
-    </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Passionate about crafting clean, intuitive user interfaces and continuously optimizing application performance. Seeking to bring my expertise and enthusiasm to a dynamic and collaborative development team.</p>
-        <p><strong>Address:</strong> No: 240, Katchur, Kovil Street, Outhukottai, Thiruvallur, 602026</p>
-        <p><strong>Email:</strong> sivagopi821@gmail.com</p>
-        <p><strong>Phone:</strong> 9344134674</p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sivaiah1525" target="_blank">linkedin.com/in/sivaiah1525</a></p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/sivaiah1525" target="_blank">github.com/sivaiah1525</a></p>
-    </section>
+        <!-- Projects (step-by-step) -->
+        <div class="section">
+          <div class="section-title"><span class="material-icons">construction</span> Selected Projects (step-by-step)</div>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-list">
-            <div class="skill-item">HTML5</div>
-            <div class="skill-item">CSS4</div>
-            <div class="skill-item">JavaScript</div>
-            <div class="skill-item">Angular 15+</div>
-            <div class="skill-item">Angular Material</div>
-            <div class="skill-item">Bootstrap 4 & 5</div>
-            <div class="skill-item">Google Icons</div>
-            <div class="skill-item">Ionic Framework</div>
-            <div class="skill-item">Cordova</div>
-            <div class="skill-item">HTTP APIs</div>
-            <div class="skill-item">Ngx Data Tables</div>
-            <div class="skill-item">AGM Maps</div>
-            <div class="skill-item">Canvas Charts</div>
-            <div class="skill-item">AWS S3 Deployment</div>
+          <div style="margin-bottom:8px;">
+            <strong>LeanResto</strong> — Mobile app for restaurant booking & ordering<br>
+            <small class="small">Tech: Ionic 7, Angular, Google Maps, NGX Charts</small>
+            <ol class="step-list" style="margin-top:8px;">
+              <li><div class="bullet-text">Designed ordering flows and menus with offline caching for speed.</div></li>
+              <li><div class="bullet-text">Integrated maps for restaurant pickup and delivery zones.</div></li>
+              <li><div class="bullet-text">Created analytics dashboard using NGX Charts for order metrics.</div></li>
+            </ol>
+          </div>
+
+          <div style="margin-bottom:8px;">
+            <strong>Planning & Me (CRM)</strong> — CRM application for business ops<br>
+            <small class="small">Tech: Angular 14, Google Maps, NGX Charts</small>
+            <ol class="step-list" style="margin-top:8px;">
+              <li><div class="bullet-text">Implemented lead pipeline views and role-based access modules.</div></li>
+              <li><div class="bullet-text">Added interactive charts for campaign and sales tracking.</div></li>
+            </ol>
+          </div>
+
+          <div style="margin-bottom:8px;">
+            <strong>Onssen Data & API (E-commerce)</strong><br>
+            <small class="small">Tech: Angular 16, NGX Charts</small>
+            <ol class="step-list" style="margin-top:8px;">
+              <li><div class="bullet-text">Built product listing, cart, and admin dashboards with reusable tables.</div></li>
+              <li><div class="bullet-text">Optimized list rendering and pagination for large catalogs.</div></li>
+            </ol>
+          </div>
         </div>
-    </section>
 
-    <section id="works">
-        <h2>Projects</h2>
-        <div class="works-gallery">
-            <div class="work-card">
-                <img src="https://via.placeholder.com/400x200" alt="Leanresto">
-                <h4>Leanresto - Restaurant Food Booking (Ionic 7, Angular Calendar, Google Map, NGX Charts)</h4>
-                <p><a href="https://leanresto.com" target="_blank">View Project</a></p>
-            </div>
-            <div class="work-card">
-                <img src="https://via.placeholder.com/400x200" alt="Planning & Me">
-                <h4>Planning & Me - CRM (Angular 14, Angular Calendar, Google Map, NGX Charts)</h4>
-                <p><a href="https://www.planningandme.com" target="_blank">View Project</a></p>
-            </div>
-            <div class="work-card">
-                <img src="https://via.placeholder.com/400x200" alt="Onssen Data">
-                <h4>Onssen Data & API - ECommerce Site (Angular 16)</h4>
-                <p><a href="http://onssen-ui.s3-website.eu-west-3.amazonaws.com/" target="_blank">View Project</a></p>
-            </div>
-            <div class="work-card">
-                <img src="https://via.placeholder.com/400x200" alt="UTM Builder">
-                <h4>UTM Builder - Campaign Creation & Tracking (Angular 16)</h4>
-                <p><a href="https://www.leadgourmet.com/login" target="_blank">View Project</a></p>
-            </div>
+        <!-- Tech Highlights - ensures longer length -->
+        <div class="section">
+          <div class="section-title"><span class="material-icons">rocket_launch</span> Tech Highlights</div>
+          <ol class="step-list">
+            <li><div class="bullet-text">Created reusable component library to accelerate feature delivery.</div></li>
+            <li><div class="bullet-text">Implemented lazy-loaded modules and route preloading for faster navigation.</div></li>
+            <li><div class="bullet-text">Used RxJS patterns (subjects, shareReplay) to reduce redundant network calls.</div></li>
+          </ol>
         </div>
-    </section>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+      </div>
 
-    <footer>
-        <a href="https://www.linkedin.com/in/sivaiah1525" target="_blank">LinkedIn</a>
-        <a href="https://github.com/sivaiah1525" target="_blank">GitHub</a>
-    </footer>
+      <!-- RIGHT (aside) -->
+      <aside class="aside">
+        <div class="section">
+          <div class="section-title" style="background:#fff; border-left:0;"><span class="material-icons">build_circle</span> Core Skills</div>
+          <div class="tag-row" style="margin-top:8px;">
+            <div class="tag">Angular</div>
+            <div class="tag">Ionic</div>
+            <div class="tag">HTML</div>
+            <div class="tag">CSS</div>
+            <div class="tag">TypeScript</div>
+            <div class="tag">JavaScript</div>
+            <div class="tag">RxJS</div>
+            <div class="tag">NGX Charts</div>
+            <div class="tag">Google Maps</div>
+            <div class="tag">Google Calender</div>
+          </div>
+
+          <div style="margin-top:10px;">
+            <div class="small"><strong>Backend & DB</strong></div>
+            <div class="small">Node.js • MongoDB • Mongoose</div>
+            <div style="height:10px"></div>
+            <div class="small"><strong>Cloud & Deployment</strong></div>
+            <div class="small">AWS S3 • GitHub • Static Hosting</div>
+          </div>
+        </div>
+
+        <div class="section" style="margin-top:10px;">
+          <div class="section-title" style="background:#fff; border-left:0;"><span class="material-icons">school</span> Education</div>
+          <div class="small"><strong>B.E. Mechanical Engineering</strong><br>Panimalar Engineering College — CGPA: 7.5</div>
+          <div style="height:8px"></div>
+          <div class="small"><strong>Diploma in Mechanical Engg</strong><br>Adhiparasakthi Polytechnic — 89%</div>
+        </div>
+
+        <div class="section" style="margin-top:10px;">
+          <div class="section-title" style="background:#fff; border-left:0;"><span class="material-icons">language</span> Languages</div>
+          <div class="small"><strong>English</strong> — Full Professional</div>
+          <div class="small"><strong>Tamil</strong> — Full Professional</div>
+          <div class="small"><strong>Telugu</strong> — Basic</div>
+        </div>
+
+        <!-- Actions: Download buttons -->
+        <div style="margin-top:12px;">
+
+          <div class="actions" style="flex-direction:column; align-items:stretch;">
+            <button class="btn" id="download-pdf-btn" title="Download as PDF">
+              <span class="material-icons" style="vertical-align:middle; font-size:18px;">picture_as_pdf</span>
+              &nbsp;Download PDF
+            </button>
+
+            <button class="btn-outline" id="download-html-btn" title="Download HTML" style="margin-top:8px;">
+              <span class="material-icons" style="vertical-align:middle; font-size:18px;">file_download</span>
+              &nbsp;Download HTML
+            </button>
+
+            <button class="btn-outline" id="print-btn" style="margin-top:8px;">
+              <span class="material-icons" style="vertical-align:middle; font-size:18px;">print</span>
+              &nbsp;Print / Save as PDF
+            </button>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    // Download as PDF using html2pdf
+    document.getElementById('download-pdf-btn').addEventListener('click', function () {
+      const element = document.getElementById('resume-root');
+      const opt = {
+        margin:       0.4,
+        filename:     'Sivaiah_Resume.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2, useCORS: true },
+        jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+      };
+      // disable the button while processing
+      const btn = this;
+      btn.disabled = true;
+      btn.textContent = 'Preparing PDF...';
+      setTimeout(() => {
+        html2pdf().set(opt).from(element).save().then(() => {
+          btn.disabled = false;
+          btn.innerHTML = '<span class="material-icons" style="vertical-align:middle; font-size:18px;">picture_as_pdf</span>&nbsp;Download PDF';
+        }).catch(err => {
+          console.error(err);
+          alert('Could not create PDF. Try printing (browser) as fallback.');
+          btn.disabled = false;
+          btn.innerHTML = '<span class="material-icons" style="vertical-align:middle; font-size:18px;">picture_as_pdf</span>&nbsp;Download PDF';
+        });
+      }, 120);
+    });
+
+    // Download current HTML file contents
+    document.getElementById('download-html-btn').addEventListener('click', function () {
+      const html = '<!doctype html>\\n' + document.documentElement.outerHTML;
+      const blob = new Blob([html], { type: 'text/html' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'Sivaiah_Resume.html';
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    });
+
+    // Print fallback
+    document.getElementById('print-btn').addEventListener('click', function () {
+      window.print();
+    });
+  </script>
 
 </body>
 </html>
