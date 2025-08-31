@@ -56,6 +56,11 @@
       color:var(--muted);
     }
     .contact a{ color:var(--accent); text-decoration:none; }
+   .contact1{
+      font-size:13px;
+      color:var(--muted);
+    }
+    .contact1 a{ color:var(--accent); text-decoration:none; }
 
     /* layout */
     .main{
@@ -192,19 +197,46 @@
 <body>
 
   <div class="wrap" id="resume-root">
-    <div class="header">
-      <div>
-        <div class="name">Sivaiah J G</div>
-        <div style="color:var(--muted); margin-top:4px; font-size:14px;">Software Developer — Angular & Ionic</div>
-      </div>
 
-      <div class="contact">
-        Thiruvallur, Tamil Nadu<br>
-        <a href="tel:9344134674">9344134674</a> • <a href="mailto:sivagopi821@gmail.com">sivagopi821@gmail.com</a><br>
-        <a href="https://www.linkedin.com/in/sivaiah1525" target="_blank">linkedin.com/in/sivaiah1525</a> •
-        <a href="https://github.com/sivaiah1525" target="_blank">github.com/sivaiah1525</a>
-      </div>
+<div class="header">
+  <div>
+    <div class="name">Sivaiah J G</div>
+        <div style="color:var(--muted); margin-top:4px; font-size:14px;">
+      Software Developer — Angular & Ionic
     </div>
+   <div class="contact1">
+            <div>
+      <span class="material-icons" style="font-size:16px; vertical-align:middle; color:#555;">call</span>
+      <a href="tel:9344134674">9344134674</a>
+    </div>
+        <div>
+      <span class="material-icons" style="font-size:16px; vertical-align:middle; color:#555;">email</span>
+      <a href="mailto:sivagopi821@gmail.com">sivagopi821@gmail.com</a>
+    </div>
+   </div>
+
+  </div>
+
+  <div class="contact">
+    <div>
+      <span class="material-icons" style="font-size:16px; vertical-align:middle; color:#555;">location_on</span>
+      Chennai, Tamil Nadu
+    </div>
+    <div>
+      <span class="material-icons" style="font-size:16px; vertical-align:middle; color:#555;">code</span>
+      <a href="https://www.linkedin.com/in/sivaiah1525" target="_blank">linkedin.com/in/sivaiah1525</a>
+    </div>
+    <div>
+      <span class="material-icons" style="font-size:16px; vertical-align:middle; color:#555;">code</span>
+      <a href="https://github.com/sivaiah1525" target="_blank">github.com/sivaiah1525</a>
+    </div>
+    <div>
+      <span class="material-icons" style="font-size:16px; vertical-align:middle; color:#555;">description</span>
+      <a href="https://sivaiah1525.github.io/Resume-Template" target="_blank">Resume-Template</a>
+    </div>
+  </div>
+</div>
+
 
     <div class="main">
       <!-- LEFT -->
@@ -288,15 +320,18 @@
           </div>
         </div>
 
-        <!-- Tech Highlights - ensures longer length -->
-        <div class="section">
-          <div class="section-title"><span class="material-icons">rocket_launch</span> Tech Highlights</div>
-          <ol class="step-list">
-            <li><div class="bullet-text">Created reusable component library to accelerate feature delivery.</div></li>
-            <li><div class="bullet-text">Implemented lazy-loaded modules and route preloading for faster navigation.</div></li>
-            <li><div class="bullet-text">Used RxJS patterns (subjects, shareReplay) to reduce redundant network calls.</div></li>
-          </ol>
-        </div>
+<!-- Tech Highlights -->
+<div class="section">
+  <div class="section-title">
+    <span class="material-icons">rocket_launch</span> Tech Highlights
+  </div>
+  <ul class="step-list">
+    <li><div class="bullet-text">Built reusable Angular components & services.</div></li>
+    <li><div class="bullet-text">Optimized app with lazy loading & route guards.</div></li>
+    <li><div class="bullet-text">Handled state management using RxJS & Observables.</div></li>
+  </ul>
+</div>
+
 
       </div>
 
