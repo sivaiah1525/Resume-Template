@@ -26,6 +26,8 @@
       font-family: Inter, "Helvetica Neue", Arial, sans-serif;
       color: var(--dark);
       background: #f7fbff;
+      font-size: 16px;
+      line-height: 1.8;
     }
 
     .wrap {
@@ -34,36 +36,41 @@
       background: white;
       box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
       border-radius: 10px;
-      padding: 28px;
+      padding: 32px;
       box-sizing: border-box;
     }
 
     /* Header */
     .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 20px;
       border-bottom: 3px solid rgba(14, 165, 233, 0.06);
-      padding-bottom: 12px;
-      margin-bottom: 16px;
+      padding-bottom: 16px;
+      margin-bottom: 24px;
     }
 
     .name {
-      font-size: 28px;
-      font-weight: 700;
+      font-size: 30px;
+      font-weight: 800;
     }
 
     .role {
       color: var(--muted);
-      margin-top: 4px;
-      font-size: 14px;
+      margin-top: 6px;
+      font-size: 16px;
+      font-weight: 500;
     }
 
     .contact-block {
-      margin-top: 10px;
-      font-size: 13px;
+      font-size: 14px;
       color: var(--muted);
     }
 
     .contact-block div {
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
 
     .contact-block a {
@@ -71,33 +78,34 @@
       text-decoration: none;
     }
 
-    /* Section */
+    /* Sections */
     .section {
-      margin-bottom: 20px;
+      margin-bottom: 32px;
+      page-break-inside: avoid;
     }
 
     .section-title {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       background: #e6f8ff;
       border-left: 6px solid var(--accent);
-      padding: 8px 12px;
+      padding: 8px 10px;
       border-radius: 6px;
-      margin-bottom: 10px;
-      font-size: 16px;
+      margin-bottom: 16px;
+      font-size: 18px;
       font-weight: 700;
       color: var(--dark);
     }
 
     .section-title .material-icons {
       color: var(--accent);
-      font-size: 20px;
+      font-size: 24px;
     }
 
     .summary {
-      font-size: 14px;
-      line-height: 1.5;
+      font-size: 16px;
+      line-height: 1.8;
     }
 
     /* Lists */
@@ -110,19 +118,19 @@
 
     .step-list li {
       display: flex;
-      gap: 10px;
-      margin: 8px 0;
+      gap: 12px;
+      margin: 10px 0;
     }
 
     .step-list li:before {
       counter-increment: step;
       content: counter(step);
-      min-width: 22px;
-      height: 22px;
+      min-width: 26px;
+      height: 26px;
       border-radius: 6px;
       background: var(--accent);
       color: white;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
       display: flex;
       align-items: center;
@@ -130,57 +138,66 @@
     }
 
     .bullet-text {
-      font-size: 14px;
-      line-height: 1.45;
+      font-size: 16px;
+      line-height: 1.7;
     }
 
     /* Skills */
     .tag-row {
       display: flex;
-      gap: 8px;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
     .tag {
-      padding: 6px 10px;
+      padding: 8px 12px;
       background: rgba(14, 165, 233, 0.08);
       color: var(--accent);
       border-radius: 6px;
       font-weight: 600;
-      font-size: 13px;
+      font-size: 14px;
     }
 
     .small {
-      font-size: 13px;
+      font-size: 15px;
       color: var(--muted);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     /* Actions */
     .actions {
-      margin-top: 20px;
+      margin-top: 28px;
     }
 
     .btn {
       background: var(--accent);
       color: white;
       border: none;
-      padding: 10px 14px;
+      padding: 12px 16px;
       border-radius: 8px;
       cursor: pointer;
       font-weight: 700;
+      font-size: 16px;
+    }
+
+    /* Declaration */
+    .declaration {
+      font-size: 16px;
+      line-height: 1.8;
     }
 
     @media print {
       body {
         background: white;
+        font-size: 16px;
+        line-height: 1.8;
       }
 
       .wrap {
         box-shadow: none;
         border-radius: 0;
         margin: 0;
-        padding: 8mm;
+        padding: 10mm;
       }
 
       .actions {
@@ -195,26 +212,34 @@
 
     <!-- Header -->
     <div class="header">
-      <div class="name">Sivaiah J G</div>
-      <div class="role">Software Developer — Angular & Ionic</div>
 
+      <!-- Left: Name and Role -->
+      <div>
+        <div class="name">Sivaiah J G</div>
+        <div class="role">Software Developer — Angular & Ionic</div>
       <div class="contact-block">
-        <div><span class="material-icons" style="font-size:16px;vertical-align:middle;">call</span>
+
+                <div><span class="material-icons">call</span>
           <a href="tel:9344134674">9344134674</a>
         </div>
-        <div><span class="material-icons" style="font-size:16px;vertical-align:middle;">email</span>
+        <div><span class="material-icons">email</span>
           <a href="mailto:sivagopi821@gmail.com">sivagopi821@gmail.com</a>
         </div>
-        <div><span class="material-icons" style="font-size:16px;vertical-align:middle;">location_on</span>
+        </div>
+      </div>
+
+      <!-- Right: Contact Info -->
+      <div class="contact-block">
+        <div><span class="material-icons">location_on</span>
           Chennai, Tamil Nadu
         </div>
-        <div><span class="material-icons" style="font-size:16px;vertical-align:middle;">code</span>
+        <div><span class="material-icons">code</span>
           <a href="https://www.linkedin.com/in/sivaiah1525" target="_blank">linkedin.com/in/sivaiah1525</a>
         </div>
-        <div><span class="material-icons" style="font-size:16px;vertical-align:middle;">code</span>
+        <div><span class="material-icons">code</span>
           <a href="https://github.com/sivaiah1525" target="_blank">github.com/sivaiah1525</a>
         </div>
-        <div><span class="material-icons" style="font-size:16px;vertical-align:middle;">description</span>
+        <div><span class="material-icons">description</span>
           <a href="https://sivaiah1525.github.io/Resume-Template" target="_blank">Resume-Template</a>
         </div>
       </div>
@@ -224,122 +249,110 @@
     <div class="section">
       <div class="section-title"><span class="material-icons">badge</span> Professional Summary</div>
       <div class="summary">
-        Experienced <strong>Frontend Developer</strong> with <strong>3.6 years</strong> of expertise in building scalable,
-        responsive, and high-performance web and mobile applications using <strong>Angular</strong> and <strong>Ionic</strong>.
-        Skilled in creating intuitive UI/UX, integrating <strong>REST APIs</strong>, and optimizing performance.
-        Passionate about clean, maintainable code and enhancing user experiences.
+        Experienced <strong>Frontend Developer</strong> with <strong>3.6 years</strong> of expertise in building scalable, responsive, and high-performance web and mobile applications using <strong>Angular</strong> and <strong>Ionic</strong>. Skilled in creating intuitive UI/UX, integrating <strong>REST APIs</strong>, and optimizing performance. Passionate about clean, maintainable code and enhancing user experiences.
       </div>
     </div>
 
     <!-- Experience -->
     <div class="section">
       <div class="section-title"><span class="material-icons">work_outline</span> Experience</div>
-
       <div class="small"><strong>Sinuous Technology Pvt Ltd</strong> — Angular Developer (Dec 2022 – Present)</div>
       <div class="small"><strong>TVS Sundram Fasteners</strong> — System Software Admin (Jan 2021 – Dec 2022) | Tech: Windows • Linux</div>
       <div class="small"><strong>Inovatric Technology Pvt Ltd</strong> — Junior Angular Developer (Feb 2020 – Jan 2021)</div>
     </div>
+    <!-- Education -->
+    <div class="section">
+      <div class="section-title"><span class="material-icons">school</span> Education</div>
+      <div class="small"><strong>B.E. Mechanical Engineering</strong> — Panimalar Engineering College | CGPA: 7.5 | Passed: 2019</div>
+      <div class="small"><strong>Diploma in Mechanical Engg</strong> — Adhiparasakthi Polytechnic | 89% | Passed: 2016</div>
+      <div class="small"><strong>SSLC</strong> — Groument School | 70% | Passed: 2013</div>
+    </div>
+        <!-- Core Skills -->
+    <div class="section">
+      <div class="section-title"><span class="material-icons">build_circle</span> Core Skills</div>
 
-<!-- Projects -->
-<div class="section">
-  <div class="section-title"><span class="material-icons">construction</span> Projects</div>
+      <div class="small"><span class="material-icons">widgets</span> <strong>Frameworks & Libraries</strong></div>
+      <div class="tag-row">
+        <div class="tag">Angular</div>
+        <div class="tag">Ionic</div>
+        <div class="tag">NGX Charts</div>
+        <div class="tag">Google Maps</div>
+        <div class="tag">RxJS</div>
+        <div class="tag">Bootstrap</div>
+        <div class="tag">Material Design</div>
+        <div class="tag">Chart.js</div>
+      </div>
 
-  <div><strong>LeanResto</strong> — Mobile app for restaurant booking & ordering
-    <ol class="step-list">
-      <li><div class="bullet-text">Designed ordering flows and menus with offline caching for speed.</div></li>
-      <li><div class="bullet-text">Integrated maps for restaurant pickup and delivery zones.</div></li>
-      <li><div class="bullet-text">Created analytics dashboard using NGX Charts for order metrics.</div></li>
-      <li><div class="bullet-text">Implemented push notifications for order updates and promotions.</div></li>
-      <li><div class="bullet-text">Optimized app performance and reduced load time by 30%.</div></li>
-    </ol>
-  </div>
+      <div class="small"><span class="material-icons">code</span> <strong>Programming Languages</strong></div>
+      <div class="tag-row">
+        <div class="tag">TypeScript</div>
+        <div class="tag">JavaScript</div>
+        <div class="tag">HTML & CSS</div>
+        <div class="tag">JSON</div>
+      </div>
 
-  <div><strong>Planning & Me (CRM)</strong> — CRM application for business ops
-    <ol class="step-list">
-      <li><div class="bullet-text">Implemented lead pipeline views and role-based access modules.</div></li>
-      <li><div class="bullet-text">Added interactive charts for campaign and sales tracking.</div></li>
-      <li><div class="bullet-text">Integrated automated email notifications for task reminders.</div></li>
-      <li><div class="bullet-text">Enhanced data filtering and search functionality for faster access.</div></li>
-      <li><div class="bullet-text">Implemented data validation and security for sensitive client information.</div></li>
-    </ol>
-  </div>
+      <div class="small"><span class="material-icons">dns</span> <strong>Backend & Databases</strong></div>
+      <div class="tag-row">
+        <div class="tag">Node.js</div>
+        <div class="tag">Express.js</div>
+        <div class="tag">MongoDB</div>
+        <div class="tag">Mongoose</div>
+        <div class="tag">REST APIs</div>
+      </div>
 
-  <div><strong>Onssen Data & API (E-commerce)</strong>
-    <ol class="step-list">
-      <li><div class="bullet-text">Built product listing, cart, and admin dashboards with reusable tables.</div></li>
-      <li><div class="bullet-text">Optimized list rendering and pagination for large catalogs.</div></li>
-      <li><div class="bullet-text">Integrated REST APIs for product, order, and user management.</div></li>
-      <li><div class="bullet-text">Implemented role-based access control for admin and vendor users.</div></li>
-      <li><div class="bullet-text">Enhanced application security and data consistency across modules.</div></li>
-    </ol>
-  </div>
-</div>
+      <div class="small"><span class="material-icons">cloud</span> <strong>Cloud & Deployment</strong></div>
+      <div class="tag-row">
+        <div class="tag">AWS S3</div>
+        <div class="tag">AWS EC2</div>
+        <div class="tag">GitHub</div>
+        <div class="tag">GitLab</div>
+        <div class="tag">Static Hosting</div>
+      </div>
 
-
-  <!-- Core Skills -->
-<div class="section">
-  <div class="section-title"><span class="material-icons">build_circle</span> Core Skills</div>
-
-  <!-- Frameworks & Libraries -->
-  <div class="small"><span class="material-icons" style="font-size:16px;vertical-align:middle;">widgets</span> <strong>Frameworks & Libraries</strong></div>
-  <div class="tag-row">
-    <div class="tag">Angular</div>
-    <div class="tag">Ionic</div>
-    <div class="tag">NGX Charts</div>
-    <div class="tag">Google Maps</div>
-    <div class="tag">RxJS</div>
-    <div class="tag">Bootstrap</div>
-    <div class="tag">Material Design</div>
-    <div class="tag">Chart.js</div>
-  </div>
-
-  <!-- Programming Languages -->
-  <div class="small"><span class="material-icons" style="font-size:16px;vertical-align:middle;">code</span> <strong>Programming Languages</strong></div>
-  <div class="tag-row">
-    <div class="tag">TypeScript</div>
-    <div class="tag">JavaScript</div>
-    <div class="tag">HTML & CSS</div>
-    <div class="tag">JSON</div>
-  </div>
-
-  <!-- Backend & Databases -->
-  <div class="small"><span class="material-icons" style="font-size:16px;vertical-align:middle;">dns</span> <strong>Backend & Databases</strong></div>
-  <div class="tag-row">
-    <div class="tag">Node.js</div>
-    <div class="tag">Express.js</div>
-    <div class="tag">MongoDB</div>
-    <div class="tag">Mongoose</div>
-    <div class="tag">REST APIs</div>
-  </div>
-
-  <!-- Cloud & Deployment -->
-  <div class="small"><span class="material-icons" style="font-size:16px;vertical-align:middle;">cloud</span> <strong>Cloud & Deployment</strong></div>
-  <div class="tag-row">
-    <div class="tag">AWS S3</div>
-    <div class="tag">AWS EC2</div>
-    <div class="tag">GitHub</div>
-    <div class="tag">GitLab</div>
-    <div class="tag">Static Hosting</div>
-  </div>
-
-  <!-- Tools & Others -->
-  <div class="small"><span class="material-icons" style="font-size:16px;vertical-align:middle;">settings</span> <strong>Tools & Others</strong></div>
-  <div class="tag-row">
-    <div class="tag">VS Code</div>
-    <div class="tag">Postman</div>
-    <div class="tag">Figma</div>
-    <div class="tag">JIRA</div>
-  </div>
-</div>
+      <div class="small"><span class="material-icons">settings</span> <strong>Tools & Others</strong></div>
+      <div class="tag-row">
+        <div class="tag">VS Code</div>
+        <div class="tag">Postman</div>
+        <div class="tag">Figma</div>
+        <div class="tag">JIRA</div>
+      </div>
+    </div>
 
 
-<!-- Education -->
-<div class="section">
-  <div class="section-title"><span class="material-icons">school</span> Education</div>
-  <div class="small"><strong>B.E. Mechanical Engineering</strong> — Panimalar Engineering College | CGPA: 7.5 | Passed: 2019</div>
-  <div class="small"><strong>Diploma in Mechanical Engg</strong> — Adhiparasakthi Polytechnic | 89% | Passed: 2016</div>
-  <div class="small"><strong>SSLC</strong> — Groument School | 70% | Passed: 2013</div>
-</div>
+    <!-- Projects -->
+    <div class="section">
+      <div class="section-title"><span class="material-icons">construction</span> Projects</div>
+
+      <div><strong>LeanResto</strong> — Mobile app for restaurant booking & ordering
+        <ol class="step-list">
+          <li><div class="bullet-text">Designed ordering flows and menus with offline caching for speed.</div></li>
+          <li><div class="bullet-text">Integrated maps for restaurant pickup and delivery zones.</div></li>
+          <li><div class="bullet-text">Created analytics dashboard using NGX Charts for order metrics.</div></li>
+          <li><div class="bullet-text">Implemented push notifications for order updates and promotions.</div></li>
+          <li><div class="bullet-text">Optimized app performance and reduced load time by 30%.</div></li>
+        </ol>
+      </div>
+
+      <div><strong>Planning & Me (CRM)</strong> — CRM application for business ops
+        <ol class="step-list">
+          <li><div class="bullet-text">Implemented lead pipeline views and role-based access modules.</div></li>
+          <li><div class="bullet-text">Added interactive charts for campaign and sales tracking.</div></li>
+          <li><div class="bullet-text">Integrated automated email notifications for task reminders.</div></li>
+          <li><div class="bullet-text">Enhanced data filtering and search functionality for faster access.</div></li>
+          <li><div class="bullet-text">Implemented data validation and security for sensitive client information.</div></li>
+        </ol>
+      </div>
+
+      <div><strong>Onssen Data & API (E-commerce)</strong>
+        <ol class="step-list">
+          <li><div class="bullet-text">Built product listing, cart, and admin dashboards with reusable tables.</div></li>
+          <li><div class="bullet-text">Optimized list rendering and pagination for large catalogs.</div></li>
+          <li><div class="bullet-text">Integrated REST APIs for product, order, and user management.</div></li>
+          <li><div class="bullet-text">Implemented role-based access control for admin and vendor users.</div></li>
+          <li><div class="bullet-text">Enhanced application security and data consistency across modules.</div></li>
+        </ol>
+      </div>
+    </div>
 
 
 
@@ -349,13 +362,22 @@
       <div class="small"><strong>English</strong>, <strong>Tamil</strong>, <strong>Telugu</strong></div>
     </div>
 
+    <!-- Declaration -->
+    <div class="section">
+      <div class="section-title"><span class="material-icons">check_circle</span> Declaration</div>
+      <div class="declaration">
+        I hereby declare that the information provided above is true and correct to the best of my knowledge and belief.
+      </div>
+    </div>
+
     <!-- Actions -->
     <div class="actions">
       <button class="btn" id="download-pdf-btn">
-        <span class="material-icons" style="font-size:18px;vertical-align:middle;">picture_as_pdf</span>
+        <span class="material-icons">picture_as_pdf</span>
         &nbsp;Download PDF
       </button>
     </div>
+
   </div>
 
   <script>
