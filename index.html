@@ -1,461 +1,261 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Sivaiah J G — Resume</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ProFinal Resume — Sivaiah J G</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    line-height: 1.5;
+    background: #fff;
+  }
 
-  <!-- Google Material Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  .resume {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+  }
 
-  <!-- html2pdf (for download as PDF) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+  h1, h2 {
+    margin: 5px 0;
+  }
 
-  <style>
-    :root {
-      --accent: #0ea5e9;
-      --dark: #0f172a;
-      --muted: #475569;
-      --page-width: 900px;
-    }
+  h1 {
+    font-size: 28px;
+  }
 
+  h2 {
+    font-size: 20px;
+    margin-top: 20px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+  }
+
+  p, li {
+    font-size: 14px;
+    margin: 3px 0;
+  }
+
+  ul, ol {
+    margin: 5px 0 10px 20px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  .contact {
+    margin: 10px 0;
+  }
+
+  .section {
+    margin-top: 15px;
+  }
+
+  .actions {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .actions button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  @media print {
     body {
+      background: #fff;
+    }
+    .resume {
       margin: 0;
-      padding: 0;
-      font-family: Inter, "Helvetica Neue", Arial, sans-serif;
-      color: var(--dark);
-      background: #f7fbff;
-      font-size: 15px;
-      line-height: 1.8;
+      padding: 10mm;
+      width: 210mm;
+      min-height: 297mm;
     }
-
-    .wrap {
-      max-width: var(--page-width);
-      margin: 28px auto;
-      background: white;
-      box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
-      border-radius: 10px;
-      padding: 32px;
-      box-sizing: border-box;
-      overflow: hidden;
-      animation: fadeIn 1s ease-in-out;
+    .no-print {
+      display: none;
     }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .section {
-      margin-bottom: 14px;
-      page-break-inside: avoid;
-      animation: slideUp 0.8s ease-in-out;
-    }
-
-    @keyframes slideUp {
-      from {
-        opacity: 0;
-        transform: translateY(25px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Header */
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      border-bottom: 3px solid var(--accent);
-      padding-bottom: 12px;
-      margin-bottom: 20px;
-    }
-
-    .name {
-      font-size: 32px;
-      font-weight: 800;
-      color: var(--dark);
-      animation: fadeIn 1.2s;
-    }
-
-    .role {
-      color: var(--muted);
-      font-size: 16px;
-      font-weight: 500;
-      margin-top: 4px;
-    }
-
-    .contact-block {
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .contact-block div {
-      margin-bottom: 6px;
-    }
-
-    .contact-block a {
-      color: var(--accent);
-      text-decoration: none;
-      position: relative;
-      top: -7px;
-    }
-
-    /* Section Titles */
-    .section-title {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      background: #e6f8ff;
-      padding: 5px 8px;
-      border-radius: 6px;
-      margin-bottom: 10px;
-      font-size: 20px;
-      font-weight: 700;
-    }
-
-    .section-title .material-icons {
-      font-size: 24px;
-      color: var(--accent);
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.2);
-      }
-
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    /* Lists */
-    .step-list {
-      counter-reset: step;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .step-list li {
-      display: flex;
-      gap: 12px;
-      margin: 8px 0;
-    }
-
-    .step-list li:before {
-      counter-increment: step;
-      content: counter(step);
-      min-width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: var(--accent);
-      color: white;
-      font-size: 14px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: bounce 1.2s infinite alternate;
-    }
-
-    @keyframes bounce {
-      from {
-        transform: translateY(0);
-      }
-
-      to {
-        transform: translateY(-3px);
-      }
-    }
-
-    .bullet-text {
-      font-size: 15px;
-      line-height: 1.9;
-    }
-
-    /* Project Titles */
-    .section strong {
-      font-size: 20px;
-      display: inline-block;
-      margin-bottom: 4px;
-      color: var(--dark);
-    }
-
-    /* Tags */
-    .tag-row {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin: 6px 0 12px;
-    }
-
-    .tag {
-      padding: 6px 12px;
-      background: rgba(14, 165, 233, 0.08);
-      color: var(--accent);
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 14px;
-      animation: fadeIn 1.2s;
-    }
-
-    /* Progress Bars (Languages) */
-    .lang-skill {
-      margin: 5px 0;
-    }
-
-    .bar {
-      height: 8px;
-      background: #e5e7eb;
-      border-radius: 6px;
-      overflow: hidden;
-      margin-top: 3px;
-    }
-
-    .bar-fill {
-      height: 100%;
-      background: var(--accent);
-      width: 0;
-      animation: loadBar 2s forwards;
-    }
-
-    @keyframes loadBar {
-      from {
-        width: 0;
-      }
-
-      to {
-        width: var(--level);
-      }
-    }
-
-    /* Actions */
-    .actions {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .btn {
-      background: var(--accent);
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 700;
-      font-size: 16px;
-      transition: all 0.3s ease;
-    }
-
-    .btn:hover {
-      background: #0284c7;
-      transform: scale(1.05);
-    }
-
-    /* Print & PDF */
-    @media print {
-      body {
-        background: white;
-        font-size: 14px;
-        line-height: 1.6;
-      }
-
-      .wrap {
-        box-shadow: none;
-        border-radius: 0;
-        margin: 0;
-        padding: 10mm;
-      }
-
-      .actions {
-        display: none;
-      }
-
-      .section {
-        page-break-inside: avoid;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
-
 <body>
-  <div class="wrap" id="resume-root">
 
-    <!-- Header -->
-    <div class="header">
-      <div>
-        <div class="name">Sivaiah J G</div>
-        <div class="role">Software Developer — Angular & Ionic</div>
-        <div class="contact-block">
-          <div><span class="material-icons">call</span> <a href="tel:9344134674">9344134674</a></div>
-          <div><span class="material-icons">email</span> <a href="mailto:sivagopi821@gmail.com">sivagopi821@gmail.com</a></div>
-        </div>
-      </div>
-      <div class="contact-block">
-        <div><span class="material-icons">location_on</span> Chennai, Tamil Nadu</div>
-        <div><span class="material-icons">code</span> <a href="https://www.linkedin.com/in/sivaiah1525" target="_blank">linkedin.com/in/sivaiah1525</a></div>
-        <div><span class="material-icons">code</span> <a href="https://github.com/sivaiah1525" target="_blank">github.com/sivaiah1525</a></div>
-        <div><span class="material-icons">description</span> <a href="https://sivaiah1525.github.io/Resume-Template" target="_blank">Resume-Template</a></div>
-      </div>
-    </div>
+<div class="resume">
 
-    <!-- Summary -->
-    <div class="section">
-      <div class="section-title"><span class="material-icons">badge</span> Professional Summary</div>
-      <div class="summary">
-        Experienced <strong>Frontend Developer</strong> with <strong>3.6 years</strong> of expertise in building scalable, responsive, and high-performance web and mobile applications using <strong>Angular</strong> and <strong>Ionic</strong>. Skilled in creating intuitive UI/UX, integrating <strong>REST APIs</strong>, and optimizing performance. Passionate about clean, maintainable code and enhancing user experiences.
-      </div>
-    </div>
-
-    <!-- Experience -->
-    <div class="section">
-      <div class="section-title"><span class="material-icons">work_outline</span> Experience</div>
-      <div class="small"><strong>Sinuous Technology Pvt Ltd</strong> — Angular Developer (Dec 2022 – Present)</div>
-      <div class="small"><strong>TVS Sundram Fasteners</strong> — System Software Admin (Jan 2021 – Dec 2022) </div>
-      <div class="small"><strong>Inovatric Technology Pvt Ltd</strong> — Junior Angular Developer (Feb 2020 – Jan 2021)</div>
-    </div>
-
-    <!-- Education -->
-    <div class="section">
-      <div class="section-title"><span class="material-icons">school</span> Education</div>
-      <div class="small"><strong>B.E. Mechanical Engineering</strong> — Panimalar Engineering College | CGPA: 7.5 | Passed: 2019</div>
-      <div class="small"><strong>Diploma in Mechanical Engg</strong> — Adhiparasakthi Polytechnic | 89% | Passed: 2016</div>
-      <div class="small"><strong>SSLC</strong> — Government School | 70% | Passed: 2013</div>
-    </div>
-
-    <!-- Skills -->
-    <div class="section">
-      <div class="section-title"><span class="material-icons">build_circle</span> Core Skills</div>
-      <div class="tag-row">
-        <div class="tag">Angular</div>
-        <div class="tag">Ionic</div>
-        <div class="tag">NGX Charts</div>
-        <div class="tag">Google Maps</div>
-        <div class="tag">RxJS</div>
-        <div class="tag">Bootstrap</div>
-        <div class="tag">Material Design</div>
-        <div class="tag">Chart.js</div>
-      </div>
-      <div class="tag-row">
-        <div class="tag">TypeScript</div>
-        <div class="tag">JavaScript</div>
-        <div class="tag">HTML & CSS</div>
-        <div class="tag">Node.js</div>
-        <div class="tag">MongoDB</div>
-        <div class="tag">Express.js</div>
-        <div class="tag">REST APIs</div>
-      </div>
-      <div class="tag-row">
-        <div class="tag">AWS S3</div>
-        <div class="tag">AWS EC2</div>
-        <div class="tag">GitHub</div>
-        <div class="tag">GitLab</div>
-        <div class="tag">Postman</div>
-        <div class="tag">Figma</div>
-        <div class="tag">JIRA</div>
-      </div>
-    </div>
-
-    <!-- Projects -->
-    <div class="section">
-      <div class="section-title"><span class="material-icons">construction</span> Projects</div>
-      <div>
-        <strong>A to Z Restaurant Management Application with Marketplace</strong><br>
-        — Comprehensive hotel management system <br>
-        <a href="https://www.leanresto.com" target="_blank">www.leanresto.com</a>
-        <ol class="step-list">
-          <li><div class="bullet-text">Developed modules for Waiters, Cooks, Events/Planning, Tables, and Bills.</div></li>
-          <li><div class="bullet-text">Implemented order and ingredient tracking with real-time updates.</div></li>
-          <li><div class="bullet-text">Integrated customer and reservation management features.</div></li>
-          <li><div class="bullet-text">Created reporting dashboard for sales, inventory, and performance metrics.</div></li>
-          <li><div class="bullet-text">Enhanced marketplace integration for supplier and vendor management.</div></li>
-        </ol>
-      </div>
-      <div>
-        <strong>Organization Management Application</strong><br>
-        — Business management & automation tool <br>
-        <a href="https://www.planningandme.com" target="_blank">www.planningandme.com</a>
-        <ol class="step-list">
-          <li><div class="bullet-text">Built modules for managing employees, clients, products, and events.</div></li>
-          <li><div class="bullet-text">Integrated order and transaction tracking with automated workflows.</div></li>
-          <li><div class="bullet-text">Implemented role-based dashboards for employees and administrators.</div></li>
-          <li><div class="bullet-text">Automated report generation for performance and financial tracking.</div></li>
-          <li><div class="bullet-text">Enhanced data security and validation for business-critical information.</div></li>
-        </ol>
-      </div>
-      <div>
-        <strong>Onssen Data & API (E-commerce)</strong><br>
-        — Product & order management platform <br>
-        <a href="https://www.onssen.com" target="_blank">www.onssen.com</a>
-        <ol class="step-list">
-          <li><div class="bullet-text">Built product listing, cart, and admin dashboards with reusable tables.</div></li>
-          <li><div class="bullet-text">Optimized list rendering and pagination for large catalogs.</div></li>
-          <li><div class="bullet-text">Integrated REST APIs for product, order, and user management.</div></li>
-          <li><div class="bullet-text">Implemented role-based access control for admin and vendor users.</div></li>
-          <li><div class="bullet-text">Enhanced application security and data consistency across modules.</div></li>
-        </ol>
-      </div>
-    </div>
-
-    <!-- Languages -->
-    <div class="section">
-      <div class="section-title"><span class="material-icons">language</span> Languages</div>
-      <div class="lang-skill"><strong>English</strong>
-        <div class="bar" style="--level:90%"><div class="bar-fill"></div></div>
-      </div>
-      <div class="lang-skill"><strong>Tamil</strong>
-        <div class="bar" style="--level:85%"><div class="bar-fill"></div></div>
-      </div>
-      <div class="lang-skill"><strong>Telugu</strong>
-        <div class="bar" style="--level:80%"><div class="bar-fill"></div></div>
-      </div>
-    </div>
-
-    <!-- Declaration -->
-    <div class="section">
-      <div class="section-title"><span class="material-icons">check_circle</span> Declaration</div>
-      <div class="declaration">I hereby declare that the information provided above is true and correct to the best of my knowledge and belief.</div>
-    </div>
-
-    <!-- Actions -->
-    <div class="actions">
-      <button class="btn" id="download-pdf-btn"><span class="material-icons">picture_as_pdf</span>&nbsp;Download PDF</button>
-    </div>
+  <!-- Print Button -->
+  <div class="actions no-print">
+    <button onclick="window.print()">Print Resume (Ctrl+P / Cmd+P)</button>
   </div>
 
-  <script>
-    document.getElementById("download-pdf-btn").addEventListener("click", function () {
-      const resume = document.getElementById("resume-root");
-      const opt = {
-        margin: 0.2,
-        filename: "Sivaiah_JG_Resume.pdf",
-        image: { type: "jpeg", quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
-        pagebreak: { mode: ["avoid-all", "css", "legacy"] }
-      };
-      html2pdf().set(opt).from(resume).save();
-    });
-  </script>
-</body>
+  <!-- Header -->
+  <h1>Sivaiah J G</h1>
+  <p>Software Developer — Angular & Ionic</p>
 
+  <div class="contact">
+    <p>Phone: 9344134674 | Email: sivagopi821@gmail.com</p>
+    <p>Location: Chennai, Tamil Nadu</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/sivaiah1525" target="_blank">linkedin.com/in/sivaiah1525</a> | GitHub: <a href="https://github.com/sivaiah1525" target="_blank">github.com/sivaiah1525</a></p>
+  </div>
+
+  <!-- Professional Summary -->
+  <div class="section">
+    <h2>Professional Summary</h2>
+    <p>Experienced Frontend Developer with 3.6 years of expertise in Angular & Ionic. Skilled in building scalable, responsive web and mobile applications, integrating REST APIs, and creating clean UI/UX.</p>
+  </div>
+
+
+  <!-- Education -->
+  <div class="section">
+    <h2>Education</h2>
+    <p><strong>B.E. Mechanical Engineering</strong> — Panimalar Engineering College | CGPA: 7.5 | 2019</p>
+    <p><strong>Diploma in Mechanical Engg</strong> — Adhiparasakthi Polytechnic | 89% | 2016</p>
+    <p><strong>SSLC</strong> — Government School | 70% | 2013</p>
+  </div>
+
+  <!-- Core Skills -->
+  <div class="section">
+    <h2>Core Skills</h2>
+    
+    <strong>Frameworks:</strong>
+    <ul>
+      <li>Angular</li>
+      <li>Ionic</li>
+      <li>Bootstrap</li>
+      <li>Material Design</li>
+    </ul>
+    
+    <strong>Languages:</strong>
+    <ul>
+      <li>JavaScript</li>
+      <li>TypeScript</li>
+      <li>HTML</li>
+      <li>CSS</li>
+    </ul>
+
+    <strong>Databases:</strong>
+    <ul>
+      <li>MongoDB</li>
+    </ul>
+
+    <strong>Other Tools/Technologies:</strong>
+    <ul>
+      <li>NGX Charts</li>
+      <li>RxJS</li>
+      <li>Node.js</li>
+      <li>REST APIs</li>
+      <li>AWS</li>
+      <li>GitHub</li>
+    </ul>
+  </div>
+
+  <!-- Experience -->
+  <div class="section">
+    <h2>Experience</h2>
+    <p><strong>Sinuous Technology Pvt Ltd</strong> — Angular Developer (Dec 2022 – Present)</p>
+    <p><strong>TVS Sundram Fasteners</strong> — System Software Admin (Jan 2021 – Dec 2022)</p>
+    <p><strong>Inovatric Technology Pvt Ltd</strong> — Junior Angular Developer (Feb 2020 – Jan 2021)</p>
+  </div>
+
+  <!-- Projects -->
+  <div class="section">
+    <h2>Projects</h2>
+
+    <div>
+      <strong>A to Z Restaurant Management Application with Marketplace</strong><br>
+      — Comprehensive hotel management system <br>
+      <a href="https://www.leanresto.com" target="_blank">www.leanresto.com</a>
+      <ol>
+        <li>Developed modules for Waiters, Cooks, Events/Planning, Tables, and Bills.</li>
+        <li>Implemented order and ingredient tracking with real-time updates.</li>
+        <li>Integrated customer and reservation management features.</li>
+        <li>Created reporting dashboard for sales, inventory, and performance metrics.</li>
+        <li>Enhanced marketplace integration for supplier and vendor management.</li>
+      </ol>
+    </div>
+
+    <div>
+      <strong>Organization Management Application</strong><br>
+      — Business management & automation tool <br>
+      <a href="https://www.planningandme.com" target="_blank">www.planningandme.com</a>
+      <ol>
+        <li>Built modules for managing employees, clients, products, and events.</li>
+        <li>Integrated order and transaction tracking with automated workflows.</li>
+        <li>Implemented role-based dashboards for employees and administrators.</li>
+        <li>Automated report generation for performance and financial tracking.</li>
+        <li>Enhanced data security and validation for business-critical information.</li>
+      </ol>
+    </div>
+
+    <div>
+      <strong>Onssen Data & API (E-commerce)</strong><br>
+      — Product & order management platform <br>
+      <a href="https://www.onssen.com" target="_blank">www.onssen.com</a>
+      <ol>
+        <li>Built product listing, cart, and admin dashboards with reusable tables.</li>
+        <li>Optimized list rendering and pagination for large catalogs.</li>
+        <li>Integrated REST APIs for product, order, and user management.</li>
+        <li>Implemented role-based access control for admin and vendor users.</li>
+        <li>Enhanced application security and data consistency across modules.</li>
+      </ol>
+    </div>
+
+    <div>
+      <strong>Hotel Booking Application</strong><br>
+      — Web & mobile app for hotel reservations <br>
+      <a href="#" target="_blank">www.examplehotelbooking.com</a>
+      <ol>
+        <li>Developed search, booking, and payment modules.</li>
+        <li>Integrated third-party payment gateways.</li>
+        <li>Implemented real-time room availability and booking updates.</li>
+        <li>Created admin dashboard for hotel management.</li>
+        <li>Optimized mobile responsiveness for user-friendly experience.</li>
+      </ol>
+    </div>
+
+    <div>
+      <strong>Inventory Management System</strong><br>
+      — Web app for tracking products and inventory <br>
+      <a href="#" target="_blank">www.exampleinventory.com</a>
+      <ol>
+        <li>Developed modules for product, supplier, and stock management.</li>
+        <li>Integrated barcode scanning and reporting features.</li>
+        <li>Implemented role-based access for admin and staff.</li>
+        <li>Automated notifications for low stock items.</li>
+        <li>Created export/import functionality for inventory data.</li>
+      </ol>
+    </div>
+  </div>
+  <!-- Languages Known -->
+  <div class="section">
+    <h2>Languages Known</h2>
+    <ul>
+      <li>English (90%)</li>
+      <li>Tamil (85%)</li>
+      <li>Telugu (80%)</li>
+    </ul>
+  </div>
+
+  <!-- Declaration -->
+  <div class="section">
+    <h2>Declaration</h2>
+    <p>I hereby declare that the information provided above is true and correct to the best of my knowledge and belief.</p>
+    <p>Date: </p>
+    <p>Place: </p>
+  </div>
+
+</div>
+
+<script>
+  const date = new Date();
+  document.getElementById('current-date').textContent = date.toLocaleDateString();
+  document.getElementById('current-time').textContent = date.toLocaleTimeString();
+</script>
+
+</body>
 </html>
