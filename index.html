@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
   <title>Sivaiah | Portfolio</title>
   <style>
     * {
@@ -204,7 +206,9 @@
     <h2>Software Developer — Angular & Ionic</h2>
     <p>5 years of total IT experience with 3.10 years in Angular & Ionic. Specialized in building modern, responsive web
       applications.</p>
-    <a href="./Resume.html" class="btn" target="_blank">View CV</a>
+    <!-- <a href="./Resume.html" class="btn" target="_blank">View CV</a> -->
+     <button class="btn" onclick="downloadPDF()">Download CV</button>
+
   </section>
 
   <!-- Projects -->
@@ -279,5 +283,29 @@
   </section>
 
 </body>
+<script>
+function downloadPDF() {
+  // Create hidden iframe
+  const iframe = document.createElement('iframe');
+  iframe.src = './Resume.html';
+  iframe.style.display = 'none';
+  document.body.appendChild(iframe);
+
+  iframe.onload = function () {
+    const element = iframe.contentDocument.querySelector('.resume');
+    const opt = {
+      margin: 0.5,
+      filename: 'Sivaiah_JG_Resume.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+    };
+    html2pdf().set(opt).from(element).save().then(() => {
+      document.body.removeChild(iframe); // cleanup
+    });
+  };
+}
+</script>
+
 
 </html>
