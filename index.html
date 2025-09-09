@@ -1,261 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ProFinal Resume — Sivaiah J G</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #000;
-    line-height: 1.5;
-    background: #fff;
-  }
-
-  .resume {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-  }
-
-  h1, h2 {
-    margin: 5px 0;
-  }
-
-  h1 {
-    font-size: 28px;
-  }
-
-  h2 {
-    font-size: 20px;
-    margin-top: 20px;
-    border-bottom: 1px solid #000;
-    padding-bottom: 5px;
-  }
-
-  p, li {
-    font-size: 14px;
-    margin: 3px 0;
-  }
-
-  ul, ol {
-    margin: 5px 0 10px 20px;
-  }
-
-  a {
-    text-decoration: none;
-    color: #000;
-  }
-
-  .contact {
-    margin: 10px 0;
-  }
-
-  .section {
-    margin-top: 15px;
-  }
-
-  .actions {
-    text-align: center;
-    margin: 20px 0;
-  }
-
-  .actions button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-
-  @media print {
-    body {
-      background: #fff;
-    }
-    .resume {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sivaiah | Portfolio</title>
+  <style>
+    * {
       margin: 0;
-      padding: 10mm;
-      width: 210mm;
-      min-height: 297mm;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
-    .no-print {
-      display: none;
+
+    body {
+      background-color: #0d0f1a;
+      color: #fff;
+      line-height: 1.6;
     }
-  }
-</style>
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(13, 15, 26, 0.9);
+      backdrop-filter: blur(5px);
+      z-index: 100;
+    }
+
+    nav .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #8a5cff;
+    }
+
+    /* Section Defaults */
+    section {
+      padding: 100px 20px 50px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #ccc;
+      font-size: 16px;
+    }
+
+    /* Hero */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid #8a5cff;
+      margin-bottom: 20px;
+    }
+
+    .hero h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .hero h2 span {
+      color: #8a5cff;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      margin-top: 20px;
+      border-radius: 25px;
+      background: linear-gradient(45deg, #8a5cff, #00d4ff);
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      opacity: 0.8;
+    }
+
+    /* Projects */
+    .projects .project {
+      background: #1a1d2b;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 700px;
+      text-align: left;
+    }
+
+    .projects h2 {
+      margin-bottom: 10px;
+      color: #8a5cff;
+    }
+
+    /* Technologies */
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .tech-item {
+      padding: 10px 20px;
+      border: 1px solid #8a5cff;
+      border-radius: 20px;
+      background: #1a1d2b;
+      font-size: 14px;
+    }
+
+    /* About */
+    .about {
+      max-width: 700px;
+      margin: auto;
+      text-align: left;
+    }
+
+    /* Contact */
+    .contact {
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .contact a {
+      color: #00d4ff;
+      text-decoration: none;
+      display: block;
+      margin: 10px 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        padding: 20px;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="resume">
-
-  <!-- Print Button -->
-  <div class="actions no-print">
-    <button onclick="window.print()">Print Resume (Ctrl+P / Cmd+P)</button>
-  </div>
-
-  <!-- Header -->
-  <h1>Sivaiah J G</h1>
-  <p>Software Developer — Angular & Ionic</p>
-
-  <div class="contact">
-    <p>Phone: 9344134674 | Email: sivagopi821@gmail.com</p>
-    <p>Location: Chennai, Tamil Nadu</p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/sivaiah1525" target="_blank">linkedin.com/in/sivaiah1525</a> | GitHub: <a href="https://github.com/sivaiah1525" target="_blank">github.com/sivaiah1525</a></p>
-  </div>
-
-  <!-- Professional Summary -->
-  <div class="section">
-    <h2>Professional Summary</h2>
-    <p>Experienced Frontend Developer with 3.6 years of expertise in Angular & Ionic. Skilled in building scalable, responsive web and mobile applications, integrating REST APIs, and creating clean UI/UX.</p>
-  </div>
-
-
-  <!-- Education -->
-  <div class="section">
-    <h2>Education</h2>
-    <p><strong>B.E. Mechanical Engineering</strong> — Panimalar Engineering College | CGPA: 7.5 | 2019</p>
-    <p><strong>Diploma in Mechanical Engg</strong> — Adhiparasakthi Polytechnic | 89% | 2016</p>
-    <p><strong>SSLC</strong> — Government School | 70% | 2013</p>
-  </div>
-
-  <!-- Core Skills -->
-  <div class="section">
-    <h2>Core Skills</h2>
-    
-    <strong>Frameworks:</strong>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">My Portfolio</div>
     <ul>
-      <li>Angular</li>
-      <li>Ionic</li>
-      <li>Bootstrap</li>
-      <li>Material Design</li>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#technologies">Technologies</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-    
-    <strong>Languages:</strong>
-    <ul>
-      <li>JavaScript</li>
-      <li>TypeScript</li>
-      <li>HTML</li>
-      <li>CSS</li>
-    </ul>
+  </nav>
 
-    <strong>Databases:</strong>
-    <ul>
-      <li>MongoDB</li>
-    </ul>
-
-    <strong>Other Tools/Technologies:</strong>
-    <ul>
-      <li>NGX Charts</li>
-      <li>RxJS</li>
-      <li>Node.js</li>
-      <li>REST APIs</li>
-      <li>AWS</li>
-      <li>GitHub</li>
-    </ul>
-  </div>
-
-  <!-- Experience -->
-  <div class="section">
-    <h2>Experience</h2>
-    <p><strong>Sinuous Technology Pvt Ltd</strong> — Angular Developer (Dec 2022 – Present)</p>
-    <p><strong>TVS Sundram Fasteners</strong> — System Software Admin (Jan 2021 – Dec 2022)</p>
-    <p><strong>Inovatric Technology Pvt Ltd</strong> — Junior Angular Developer (Feb 2020 – Jan 2021)</p>
-  </div>
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <img src="./src/my-photo.png" alt="Profile Photo">
+    <h1>Hello, I'm <span>Sivaiah</span></h1>
+    <h2>Software Developer — Angular & Ionic</h2>
+    <p>5 years of total IT experience with 3.10 years in Angular & Ionic. Specialized in building modern, responsive web
+      applications.</p>
+    <a href="resume.html" class="btn" target="_blank">View CV</a>
+  </section>
 
   <!-- Projects -->
-  <div class="section">
-    <h2>Projects</h2>
-
-    <div>
-      <strong>A to Z Restaurant Management Application with Marketplace</strong><br>
-      — Comprehensive hotel management system <br>
-      <a href="https://www.leanresto.com" target="_blank">www.leanresto.com</a>
-      <ol>
-        <li>Developed modules for Waiters, Cooks, Events/Planning, Tables, and Bills.</li>
-        <li>Implemented order and ingredient tracking with real-time updates.</li>
-        <li>Integrated customer and reservation management features.</li>
-        <li>Created reporting dashboard for sales, inventory, and performance metrics.</li>
-        <li>Enhanced marketplace integration for supplier and vendor management.</li>
-      </ol>
+  <section class="projects" id="projects">
+    <h1>Projects</h1>
+    <div class="project">
+      <h2>A to Z Restaurant Management</h2>
+      <p>Hotel management with marketplace integration. <a href="https://www.leanresto.com" target="_blank">View</a></p>
     </div>
-
-    <div>
-      <strong>Organization Management Application</strong><br>
-      — Business management & automation tool <br>
-      <a href="https://www.planningandme.com" target="_blank">www.planningandme.com</a>
-      <ol>
-        <li>Built modules for managing employees, clients, products, and events.</li>
-        <li>Integrated order and transaction tracking with automated workflows.</li>
-        <li>Implemented role-based dashboards for employees and administrators.</li>
-        <li>Automated report generation for performance and financial tracking.</li>
-        <li>Enhanced data security and validation for business-critical information.</li>
-      </ol>
+    <div class="project">
+      <h2>Organization Management App</h2>
+      <p>Business management tool with automation. <a href="https://www.planningandme.com" target="_blank">View</a></p>
     </div>
-
-    <div>
-      <strong>Onssen Data & API (E-commerce)</strong><br>
-      — Product & order management platform <br>
-      <a href="https://www.onssen.com" target="_blank">www.onssen.com</a>
-      <ol>
-        <li>Built product listing, cart, and admin dashboards with reusable tables.</li>
-        <li>Optimized list rendering and pagination for large catalogs.</li>
-        <li>Integrated REST APIs for product, order, and user management.</li>
-        <li>Implemented role-based access control for admin and vendor users.</li>
-        <li>Enhanced application security and data consistency across modules.</li>
-      </ol>
+    <div class="project">
+      <h2>Onssen Data & API (E-commerce)</h2>
+      <p>Product & order management platform. <a href="https://www.onssen.com" target="_blank">View</a></p>
     </div>
-
-    <div>
-      <strong>Hotel Booking Application</strong><br>
-      — Web & mobile app for hotel reservations <br>
-      <a href="#" target="_blank">www.examplehotelbooking.com</a>
-      <ol>
-        <li>Developed search, booking, and payment modules.</li>
-        <li>Integrated third-party payment gateways.</li>
-        <li>Implemented real-time room availability and booking updates.</li>
-        <li>Created admin dashboard for hotel management.</li>
-        <li>Optimized mobile responsiveness for user-friendly experience.</li>
-      </ol>
+    <div class="project">
+      <h2>Colony Desk</h2>
+      <p>Customer support platform with super admin. <a
+          href="http://onssenapi-web-ui.s3-website.eu-west-3.amazonaws.com/" target="_blank">View</a></p>
     </div>
+  </section>
 
-    <div>
-      <strong>Inventory Management System</strong><br>
-      — Web app for tracking products and inventory <br>
-      <a href="#" target="_blank">www.exampleinventory.com</a>
-      <ol>
-        <li>Developed modules for product, supplier, and stock management.</li>
-        <li>Integrated barcode scanning and reporting features.</li>
-        <li>Implemented role-based access for admin and staff.</li>
-        <li>Automated notifications for low stock items.</li>
-        <li>Created export/import functionality for inventory data.</li>
-      </ol>
-    </div>
-  </div>
-  <!-- Languages Known -->
-  <div class="section">
-    <h2>Languages Known</h2>
-    <ul>
-      <li>English (90%)</li>
-      <li>Tamil (85%)</li>
-      <li>Telugu (80%)</li>
-    </ul>
+<!-- Technologies -->
+<section class="technologies" id="technologies">
+  <h1>Technologies</h1>
+
+  <!-- Strong Knowledge -->
+  <h2>Strong Knowledge</h2>
+  <div class="tech-list">
+    <div class="tech-item">Angular</div>
+    <div class="tech-item">Ionic</div>
+    <div class="tech-item">JavaScript</div>
+    <div class="tech-item">TypeScript</div>
+    <div class="tech-item">Bootstrap</div>
+    <div class="tech-item">GitHub</div>
+    <div class="tech-item">Angular-Material-UI</div>
   </div>
 
-  <!-- Declaration -->
-  <div class="section">
-    <h2>Declaration</h2>
-    <p>I hereby declare that the information provided above is true and correct to the best of my knowledge and belief.</p>
-    <p>Date: </p>
-    <p>Place: </p>
+  <!-- Basic Knowledge -->
+  <h2>Basic Knowledge</h2>
+  <div class="tech-list">
+    <div class="tech-item">React</div>
+    <div class="tech-item">MongoDB</div>
+    <div class="tech-item">Node.js</div>
+    <div class="tech-item">AWS</div>
   </div>
+</section>
 
-</div>
 
-<script>
-  const date = new Date();
-  document.getElementById('current-date').textContent = date.toLocaleDateString();
-  document.getElementById('current-time').textContent = date.toLocaleTimeString();
-</script>
+  <!-- About Me -->
+  <section class="about" id="about">
+    <h1>About Me</h1>
+    <p>
+      I'm a frontend developer with expertise in Angular, Ionic, and modern UI frameworks.
+      I focus on building responsive, scalable, and user-friendly applications.
+      With strong problem-solving skills and teamwork experience, I aim to deliver business-driven solutions.
+    </p>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h1>Contact</h1>
+    <p>Let's connect:</p>
+    <a href="mailto:sivagopi821@gmail.com">📧 Email: sivagopi821@gmail.com</a>
+    <a href="tel:+919344134674">📞 Phone: +91 93441 34674</a>
+    <a href="https://www.linkedin.com/in/sivaiah1525" target="_blank">🔗 LinkedIn</a>
+    <a href="https://github.com/sivaiah1525" target="_blank">💻 GitHub</a>
+  </section>
 
 </body>
+
 </html>
