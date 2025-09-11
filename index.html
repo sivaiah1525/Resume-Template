@@ -1,10 +1,12 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Portfolio</title>
-  <meta name="description" content="Angular & Ionic developer. Production PWAs and mobile apps. See projects, code, and case studies." />
+  <meta name="description"
+    content="Angular & Ionic developer. Production PWAs and mobile apps. See projects, code, and case studies." />
   <link rel="canonical" href="https://github.com/sivaiah1525" />
 
   <!-- Open Graph / Twitter -->
@@ -26,78 +28,133 @@
   </script>
 
   <style>
-    :root{
-      --bg:#0b1020;
-      --bg-soft:#121933;
-      --card:#0f1630;
-      --text:#e6e9f2;
-      --muted:#aab2cf;
-      --brand:#6ea8fe;
-      --brand-2:#7c4dff;
-      --accent:#23d5ab;
-      --ring:#3652f4;
-      --max:1080px;
-      --radius:16px;
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #121933;
+      --card: #0f1630;
+      --text: #e6e9f2;
+      --muted: #aab2cf;
+      --brand: #6ea8fe;
+      --brand-2: #7c4dff;
+      --accent: #23d5ab;
+      --ring: #3652f4;
+      --max: 1080px;
+      --radius: 16px;
       --transition: all 0.3s ease;
     }
-    @media (prefers-color-scheme: light){
-      :root{ --bg:#f7f8fc; --bg-soft:#ffffff; --card:#ffffff; --text:#0f1222; --muted:#51607a; }
-    }
-    [data-theme="light"]{ --bg:#f7f8fc; --bg-soft:#ffffff; --card:#ffffff; --text:#0f1222; --muted:#51607a; }
 
-    *{ box-sizing:border-box }
-    html,body{ height:100% }
-    body{
-      margin:0; 
-      font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue","Noto Sans",Arial;
-      background:radial-gradient(1200px 600px at 10% -10%,#1a245a33,transparent),radial-gradient(900px 500px at 110% 10%,#0a7cff22,transparent),var(--bg);
-      color:var(--text);
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7f8fc;
+        --bg-soft: #ffffff;
+        --card: #ffffff;
+        --text: #0f1222;
+        --muted: #51607a;
+      }
+    }
+
+    [data-theme="light"] {
+      --bg: #f7f8fc;
+      --bg-soft: #ffffff;
+      --card: #ffffff;
+      --text: #0f1222;
+      --muted: #51607a;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      margin: 0;
+      font: 16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", "Noto Sans", Arial;
+      background: radial-gradient(1200px 600px at 10% -10%, #1a245a33, transparent), radial-gradient(900px 500px at 110% 10%, #0a7cff22, transparent), var(--bg);
+      color: var(--text);
       scroll-behavior: smooth;
     }
-    a{ color:var(--brand); text-decoration:none; transition: var(--transition); }
-    a:hover { color: var(--accent); }
-    a:focus, button:focus{ outline:3px solid var(--ring); outline-offset:2px }
-    img{ max-width:100%; height:auto; display:block }
-    
-    /* Container and layout */
-    .container{ max-width:var(--max); margin-inline:auto; padding:24px }
-    
-    /* Navigation */
-    .nav{
-      position:sticky; top:0; backdrop-filter:saturate(180%) blur(12px);
-      background:color-mix(in srgb, var(--bg) 80%, transparent);
-      border-bottom:1px solid #ffffff14; z-index:50;
+
+    a {
+      color: var(--brand);
+      text-decoration: none;
       transition: var(--transition);
     }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    a:focus,
+    button:focus {
+      outline: 3px solid var(--ring);
+      outline-offset: 2px
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block
+    }
+
+    /* Container and layout */
+    .container {
+      max-width: var(--max);
+      margin-inline: auto;
+      padding: 24px
+    }
+
+    /* Navigation */
+    .nav {
+      position: sticky;
+      top: 0;
+      backdrop-filter: saturate(180%) blur(12px);
+      background: color-mix(in srgb, var(--bg) 80%, transparent);
+      border-bottom: 1px solid #ffffff14;
+      z-index: 50;
+      transition: var(--transition);
+    }
+
     .nav.scrolled {
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
-    .nav-inner{ 
-      display:flex; 
-      gap:16px; 
-      align-items:center; 
-      justify-content:space-between; 
-      padding:12px 24px; 
-      max-width:var(--max); 
-      margin:0 auto;
+
+    .nav-inner {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 24px;
+      max-width: var(--max);
+      margin: 0 auto;
     }
-    .brand{ 
-      font-weight:700; 
-      letter-spacing:.2px;
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: .2px;
       font-size: 1.25rem;
     }
-    .nav a{ color:var(--text) }
-    .nav ul{ 
-      list-style:none; 
-      display:flex; 
-      gap:24px; 
-      margin:0; 
-      padding:0;
+
+    .nav a {
+      color: var(--text)
     }
+
+    .nav ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+      margin: 0;
+      padding: 0;
+    }
+
     .nav li a {
       position: relative;
       padding: 8px 0;
     }
+
     .nav li a::after {
       content: '';
       position: absolute;
@@ -108,48 +165,58 @@
       background: linear-gradient(90deg, var(--brand), var(--accent));
       transition: width 0.3s ease;
     }
+
     .nav li a:hover::after,
     .nav li a:focus::after {
       width: 100%;
     }
-    
+
     /* Buttons */
-    .btn{ 
-      display:inline-flex; 
-      align-items:center; 
-      justify-content:center; 
-      gap:8px; 
-      padding:10px 18px; 
-      border-radius:12px; 
-      border:1px solid #ffffff1f; 
-      background:linear-gradient(180deg,#ffffff0a,#00000000); 
-      color:var(--text); 
-      cursor:pointer;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 12px;
+      border: 1px solid #ffffff1f;
+      background: linear-gradient(180deg, #ffffff0a, #00000000);
+      color: var(--text);
+      cursor: pointer;
       transition: var(--transition);
       font-weight: 500;
     }
+
     .btn:hover {
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
-    .btn-primary{ 
-      background:linear-gradient(135deg,var(--brand),var(--brand-2)); 
-      border:none; 
-      color:#fff;
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      border: none;
+      color: #fff;
     }
+
     .btn-primary:hover {
-      background:linear-gradient(135deg, var(--brand-2), var(--brand));
+      background: linear-gradient(135deg, var(--brand-2), var(--brand));
       box-shadow: 0 4px 15px rgba(110, 168, 254, 0.3);
     }
-    .btn:disabled,[aria-disabled="true"]{ opacity:.55; cursor:not-allowed }
-    
+
+    .btn:disabled,
+    [aria-disabled="true"] {
+      opacity: .55;
+      cursor: not-allowed
+    }
+
     /* Hero section */
-    .hero{ 
-      text-align:center; 
-      padding:80px 24px 60px;
+    .hero {
+      text-align: center;
+      padding: 80px 24px 60px;
       position: relative;
       overflow: hidden;
     }
+
     .hero::before {
       content: '';
       position: absolute;
@@ -160,73 +227,104 @@
       background: radial-gradient(circle, rgba(110, 168, 254, 0.05) 0%, transparent 70%);
       z-index: -1;
     }
-    .avatar{ 
-      width:128px; 
-      height:128px; 
-      border-radius:50%; 
-      margin:0 auto 24px; 
-      border:3px solid var(--brand);
+
+    .avatar {
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      margin: 0 auto 24px;
+      border: 3px solid var(--brand);
       box-shadow: 0 0 30px rgba(110, 168, 254, 0.3);
-      object-fit:cover;
+      object-fit: cover;
       transition: var(--transition);
     }
+
     .avatar:hover {
       transform: scale(1.05);
       box-shadow: 0 0 40px rgba(110, 168, 254, 0.4);
     }
-    .muted{ color:var(--muted) }
-    .badges{ 
-      display:flex; 
-      flex-wrap:wrap; 
-      gap:10px; 
-      justify-content:center; 
-      margin:16px 0 0;
+
+    .muted {
+      color: var(--muted)
     }
-    .badge{ 
-      padding:8px 14px; 
-      border-radius:999px; 
-      background:#ffffff12; 
-      border:1px solid #ffffff1f; 
-      font-size:14px;
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin: 16px 0 0;
+    }
+
+    .badge {
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #ffffff12;
+      border: 1px solid #ffffff1f;
+      font-size: 14px;
       transition: var(--transition);
     }
+
     .badge:hover {
       transform: translateY(-2px);
       background: linear-gradient(135deg, #ffffff18, #ffffff08);
     }
-    .status{ 
-      color:#82ffa1; 
-      font-weight:600;
+
+    .status {
+      color: #82ffa1;
+      font-weight: 600;
       animation: pulse 2s infinite;
     }
+
     @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(130, 255, 161, 0.4); }
-      70% { box-shadow: 0 0 0 10px rgba(130, 255, 161, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(130, 255, 161, 0); }
+      0% {
+        box-shadow: 0 0 0 0 rgba(130, 255, 161, 0.4);
+      }
+
+      70% {
+        box-shadow: 0 0 0 10px rgba(130, 255, 161, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(130, 255, 161, 0);
+      }
     }
-    
+
     /* Grid system */
-    .grid{ display:grid; gap:24px; }
-    @media (min-width:720px){ 
-      .grid-2{ grid-template-columns:repeat(2,1fr) } 
-      .grid-3{ grid-template-columns:repeat(3,1fr) } 
+    .grid {
+      display: grid;
+      gap: 24px;
     }
-    
+
+    @media (min-width:720px) {
+      .grid-2 {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr)
+      }
+    }
+
     /* Sections */
-    section{ 
-      padding:48px 0;
+    section {
+      padding: 48px 0;
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
+
     section.visible {
       opacity: 1;
       transform: translateY(0);
     }
-    h1,h2{ 
-      letter-spacing:.2px;
+
+    h1,
+    h2 {
+      letter-spacing: .2px;
       margin-top: 0;
     }
+
     h1 {
       font-size: 2.5rem;
       margin-bottom: 16px;
@@ -235,12 +333,14 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+
     h2 {
       font-size: 2rem;
       margin-bottom: 32px;
       position: relative;
       display: inline-block;
     }
+
     h2::after {
       content: '';
       position: absolute;
@@ -251,106 +351,126 @@
       background: linear-gradient(90deg, var(--brand), var(--accent));
       border-radius: 2px;
     }
-    
+
     /* Cards */
-    .card{
-      background:linear-gradient(180deg,#ffffff08,#00000000),var(--card);
-      border:1px solid #ffffff12; 
-      border-radius:var(--radius); 
-      padding:24px;
+    .card {
+      background: linear-gradient(180deg, #ffffff08, #00000000), var(--card);
+      border: 1px solid #ffffff12;
+      border-radius: var(--radius);
+      padding: 24px;
       transition: var(--transition);
       height: 100%;
       display: flex;
       flex-direction: column;
     }
+
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       border-color: rgba(110, 168, 254, 0.2);
     }
-    .project h3{ 
-      margin:0 0 8px;
+
+    .project h3 {
+      margin: 0 0 8px;
       font-size: 1.4rem;
     }
-    .pill{ 
-      font:12px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; 
-      color:var(--muted);
+
+    .pill {
+      font: 12px/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      color: var(--muted);
       margin-bottom: 12px;
       display: inline-block;
       padding: 4px 8px;
       background: rgba(255, 255, 255, 0.05);
       border-radius: 6px;
     }
-    .row{ 
-      display:flex; 
-      gap:12px; 
-      flex-wrap:wrap; 
-      margin-top:16px;
+
+    .row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 16px;
     }
-    .kbar{ 
-      display:flex; 
-      gap:12px; 
-      align-items:center; 
-      flex-wrap:wrap; 
-      margin-top:20px;
+
+    .kbar {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
       margin-top: auto;
       padding-top: 16px;
     }
-    .about{ max-width:800px; margin:0 auto }
-    .footer{ 
-      padding:48px 0 60px; 
-      color:var(--muted); 
-      text-align:center;
+
+    .about {
+      max-width: 800px;
+      margin: 0 auto
+    }
+
+    .footer {
+      padding: 48px 0 60px;
+      color: var(--muted);
+      text-align: center;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
-    .skip{ 
-      position:absolute; 
-      left:-9999px;
+
+    .skip {
+      position: absolute;
+      left: -9999px;
       background: var(--bg);
       color: var(--text);
       padding: 8px 16px;
       border-radius: 4px;
       z-index: 1000;
     }
-    .skip:focus{ 
-      left:12px; 
-      top:12px; 
-      z-index:1000;
+
+    .skip:focus {
+      left: 12px;
+      top: 12px;
+      z-index: 1000;
     }
-    .tag{ 
-      font-size:13px; 
-      padding:6px 12px; 
-      border-radius:999px; 
-      background:#ffffff0e; 
-      border:1px solid #ffffff18;
+
+    .tag {
+      font-size: 13px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #ffffff0e;
+      border: 1px solid #ffffff18;
       transition: var(--transition);
     }
+
     .tag:hover {
       background: linear-gradient(135deg, var(--brand), var(--brand-2));
       color: white;
       transform: translateY(-2px);
     }
-    .stack{ 
-      display:flex; 
-      gap:8px; 
-      flex-wrap:wrap;
+
+    .stack {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
       margin-top: 12px;
     }
-    .contact-card a{ color:var(--text) }
-    
+
+    .contact-card a {
+      color: var(--text)
+    }
+
     /* Project list items */
     .project ul {
       padding-left: 20px;
       margin: 16px 0;
     }
+
     .project li {
       margin-bottom: 8px;
       position: relative;
     }
+
     .project li::marker {
       color: var(--brand);
     }
-    
+
     /* Mobile responsiveness */
     @media (max-width: 768px) {
       .nav-inner {
@@ -358,32 +478,40 @@
         gap: 16px;
         padding: 16px;
       }
+
       .nav ul {
         gap: 16px;
         flex-wrap: wrap;
         justify-content: center;
       }
+
       .hero {
         padding: 60px 16px 40px;
       }
+
       h1 {
         font-size: 2rem;
       }
+
       h2 {
         font-size: 1.75rem;
       }
+
       .container {
         padding: 16px;
       }
-      .grid-2, .grid-3 {
+
+      .grid-2,
+      .grid-3 {
         grid-template-columns: 1fr;
       }
+
       .btn {
         padding: 8px 14px;
         font-size: 14px;
       }
     }
-    
+
     /* Back to top button */
     .back-to-top {
       position: fixed;
@@ -404,16 +532,19 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       z-index: 99;
     }
+
     .back-to-top.visible {
       opacity: 1;
       visibility: visible;
     }
+
     .back-to-top:hover {
       transform: translateY(-5px);
       box-shadow: 0 6px 20px rgba(110, 168, 254, 0.4);
     }
   </style>
 </head>
+
 <body>
   <nav class="nav" aria-label="Primary" id="main-nav">
     <div class="nav-inner">
@@ -428,10 +559,10 @@
         <button id="themeToggle" class="btn" type="button" aria-label="Toggle theme">
           <span class="theme-icon">🌙</span>
         </button>
-        <a class="btn btn-primary" 
-   href="mailto:sivagopi821@gmail.com?subject=Hiring%20Inquiry%20—%20Angular%20%2B%20Ionic&body=Hi%20Sivaiah%2C%0D%0A%0D%0AI%20would%20like%20to%20discuss%20a%20hiring%20opportunity%20with%20you.">
-  Hire me
-</a>
+        <a class="btn btn-primary"
+          href="mailto:sivagopi821@gmail.com?subject=Hiring%20Inquiry%20—%20Angular%20%2B%20Ionic&body=Hi%20Sivaiah%2C%0D%0A%0D%0AI%20would%20like%20to%20discuss%20a%20hiring%20opportunity%20with%20you.">
+          Hire me
+        </a>
 
       </div>
     </div>
@@ -440,10 +571,11 @@
   <header class="hero container">
     <img class="avatar" src="./src/my-photo.png" alt="Portrait of Sivaiah" loading="lazy" decoding="async" />
     <h1>Hello, I'm Sivaiah</h1>
-    <p class="muted">5 years of total IT experience with 3.10 years in Angular & Ionic. Specialized in building modern, responsive web
+    <p class="muted">5 years of total IT experience with 3.10 years in Angular & Ionic. Specialized in building modern,
+      responsive web
       applications.</p>
     <div class="badges">
-      <span class="badge">Based in Chennai </span>
+      <span class="badge">Based in Chennai, Bengaluru & Hyderabad</span>
       <span class="badge status">Open to remote/onsite</span>
     </div>
     <div class="row" style="justify-content:center;margin-top:24px">
@@ -454,202 +586,203 @@
   </header>
 
   <main id="content">
-<!-- Projects -->
-<section id="projects" class="container">
-  <h2>Projects</h2>
-  <div class="grid grid-2">
-    <!-- Project 1 -->
-    <article class="card project">
-      <h3>A to Z Restaurant Management Application with Marketplace</h3>
-      <div class="pill">Angular · Ionic · NestJS · NX</div>
-      <p class="muted">Comprehensive hotel management system</p>
-      <ul>
-        <li>Developed modules for Waiters, Cooks, Events/Planning, Tables, and Bills.</li>
-        <li>Implemented order and ingredient tracking with real-time updates.</li>
-        <li>Integrated customer and reservation management features.</li>
-        <li>Created reporting dashboard for sales, inventory, and performance metrics.</li>
-        <li>Enhanced marketplace integration for supplier and vendor management.</li>
-      </ul>
-      <div class="kbar">
-        <a class="btn btn-primary" href="https://leanresto.com/" target="_blank" rel="noopener">Demo</a>
-        <a class="btn" href="https://app.leanresto.com/" target="_blank">Case study</a>
+    <!-- Projects -->
+    <section id="projects" class="container">
+      <h2>Projects</h2>
+      <div class="grid grid-2">
+        <!-- Project 1 -->
+        <article class="card project">
+          <h3>A to Z Restaurant Management Application with Marketplace</h3>
+          <div class="pill">Angular · Ionic · NestJS · NX</div>
+          <p class="muted">Comprehensive hotel management system</p>
+          <ul>
+            <li>Developed modules for Waiters, Cooks, Events/Planning, Tables, and Bills.</li>
+            <li>Implemented order and ingredient tracking with real-time updates.</li>
+            <li>Integrated customer and reservation management features.</li>
+            <li>Created reporting dashboard for sales, inventory, and performance metrics.</li>
+            <li>Enhanced marketplace integration for supplier and vendor management.</li>
+          </ul>
+          <div class="kbar">
+            <a class="btn btn-primary" href="https://leanresto.com/" target="_blank" rel="noopener">Demo</a>
+            <a class="btn" href="https://app.leanresto.com/" target="_blank">Case study</a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="card project">
+          <h3>Organization Management Application</h3>
+          <div class="pill">Angular · RxJS · Firebase</div>
+          <p class="muted">Business management & automation tool</p>
+          <ul>
+            <li>Built modules for managing employees, clients, products, and events.</li>
+            <li>Integrated order and transaction tracking with automated workflows.</li>
+            <li>Implemented role-based dashboards for employees and administrators.</li>
+            <li>Automated report generation for performance and financial tracking.</li>
+            <li>Enhanced data security and validation for business-critical information.</li>
+          </ul>
+          <div class="kbar">
+            <a class="btn btn-primary" href="https://www.planningandme.io/" target="_blank" rel="noopener">Demo</a>
+            <a class="btn" href="https://www.planningandme.com/" target="_blank">Case study</a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="card project">
+          <h3>Onssen Data & API (E-commerce)</h3>
+          <div class="pill">Angular · Node.js · PostgreSQL</div>
+          <p class="muted">Product & order management platform</p>
+          <ul>
+            <li>Built product listing, cart, and admin dashboards with reusable tables.</li>
+            <li>Optimized list rendering and pagination for large catalogs.</li>
+            <li>Integrated REST APIs for product, order, and user management.</li>
+            <li>Implemented role-based access control for admin and vendor users.</li>
+            <li>Enhanced application security and data consistency across modules.</li>
+          </ul>
+          <div class="kbar">
+            <a class="btn btn-primary" href="https://www.onssen.com" target="_blank" rel="noopener">Demo</a>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="card project">
+          <h3>Colony Desk (Customer Support Platform)</h3>
+          <div class="pill">Ionic · Capacitor · Angular Material</div>
+          <p class="muted">Unified platform for managing customer support across multiple branches.</p>
+          <ul>
+            <li>Designed a user-friendly interface with multi-branch support.</li>
+            <li>Implemented centralized ticketing system for handling customer requests.</li>
+            <li>Integrated multiple support channels for seamless communication.</li>
+            <li>Developed a <strong>Super Admin role</strong> to manage distributed branch structures.</li>
+            <li>Improved efficiency by streamlining workflows and reducing request handling time.</li>
+          </ul>
+          <div class="kbar">
+            <a class="btn btn-primary" href="http://onssenapi-web-ui.s3-website.eu-west-3.amazonaws.com/"
+              target="_blank" rel="noopener">Demo</a>
+          </div>
+        </article>
       </div>
-    </article>
+    </section>
 
-    <!-- Project 2 -->
-    <article class="card project">
-      <h3>Organization Management Application</h3>
-      <div class="pill">Angular · RxJS · Firebase</div>
-      <p class="muted">Business management & automation tool</p>
-      <ul>
-        <li>Built modules for managing employees, clients, products, and events.</li>
-        <li>Integrated order and transaction tracking with automated workflows.</li>
-        <li>Implemented role-based dashboards for employees and administrators.</li>
-        <li>Automated report generation for performance and financial tracking.</li>
-        <li>Enhanced data security and validation for business-critical information.</li>
-      </ul>
-      <div class="kbar">
-        <a class="btn btn-primary" href="https://www.planningandme.io/" target="_blank" rel="noopener">Demo</a>
-        <a class="btn" href="https://www.planningandme.com/" target="_blank">Case study</a>
+
+    <!-- Skills -->
+    <section id="skills" class="container">
+      <h2>Technologies</h2>
+      <div class="grid grid-3">
+        <!-- Frontend -->
+        <div class="card">
+          <h3>Frontend Frameworks & Libraries</h3>
+          <div class="stack">
+            <span class="tag">Angular</span>
+            <span class="tag">Ionic</span>
+            <span class="tag">Bootstrap 5</span>
+            <span class="tag">Angular Material UI</span>
+          </div>
+        </div>
+
+        <!-- Programming Languages -->
+        <div class="card">
+          <h3>Programming Languages</h3>
+          <div class="stack">
+            <span class="tag">JavaScript</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS</span>
+          </div>
+        </div>
+
+        <!-- Databases -->
+        <div class="card">
+          <h3>Databases</h3>
+          <div class="stack">
+            <span class="tag">MongoDB</span>
+            <span class="tag">Mongoose</span>
+          </div>
+        </div>
+
+        <!-- Backend & Tools -->
+        <div class="card">
+          <h3>Backend & Tools</h3>
+          <div class="stack">
+            <span class="tag">Node.js</span>
+            <span class="tag">AWS (S3, EC2)</span>
+          </div>
+        </div>
+
+
+
+        <!-- Mobile -->
+        <div class="card">
+          <h3>Mobile</h3>
+          <div class="stack">
+            <span class="tag">Cordova</span>
+            <span class="tag">APK Generation</span>
+            <span class="tag"> Play Store</span>
+          </div>
+        </div>
+
+        <!-- Version Control -->
+        <div class="card">
+          <h3>Version Control </h3>
+          <div class="stack">
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">GitLab</span>
+            <span class="tag">Azure DevOps</span>
+          </div>
+        </div>
+
+        <!-- Development Tools -->
+        <div class="card">
+          <h3>Development Tools / IDEs</h3>
+          <div class="stack">
+            <span class="tag">Visual Studio Code</span>
+          </div>
+        </div>
+
+        <!-- Operating Systems -->
+        <div class="card">
+          <h3>Operating Systems</h3>
+          <div class="stack">
+            <span class="tag">Windows</span>
+            <span class="tag">Linux</span>
+            <span class="tag">Ubuntu</span>
+          </div>
+        </div>
       </div>
-    </article>
+    </section>
 
-    <!-- Project 3 -->
-    <article class="card project">
-      <h3>Onssen Data & API (E-commerce)</h3>
-      <div class="pill">Angular · Node.js · PostgreSQL</div>
-      <p class="muted">Product & order management platform</p>
-      <ul>
-        <li>Built product listing, cart, and admin dashboards with reusable tables.</li>
-        <li>Optimized list rendering and pagination for large catalogs.</li>
-        <li>Integrated REST APIs for product, order, and user management.</li>
-        <li>Implemented role-based access control for admin and vendor users.</li>
-        <li>Enhanced application security and data consistency across modules.</li>
-      </ul>
-      <div class="kbar">
-        <a class="btn btn-primary" href="https://www.onssen.com" target="_blank" rel="noopener">Demo</a>
+
+    <!-- About -->
+    <section id="about" class="container about">
+      <h2>About Me</h2>
+      <div class="card">
+        <p>
+          I'm a frontend developer with expertise in Angular, Ionic, and modern UI frameworks.
+          I focus on building responsive, scalable, and user-friendly applications.
+          With strong problem-solving skills and teamwork experience, I aim to deliver business-driven solutions.
+        </p>
       </div>
-    </article>
-
-    <!-- Project 4 -->
-    <article class="card project">
-      <h3>Colony Desk (Customer Support Platform)</h3>
-      <div class="pill">Ionic · Capacitor · Angular Material</div>
-      <p class="muted">Unified platform for managing customer support across multiple branches.</p>
-      <ul>
-        <li>Designed a user-friendly interface with multi-branch support.</li>
-        <li>Implemented centralized ticketing system for handling customer requests.</li>
-        <li>Integrated multiple support channels for seamless communication.</li>
-        <li>Developed a <strong>Super Admin role</strong> to manage distributed branch structures.</li>
-        <li>Improved efficiency by streamlining workflows and reducing request handling time.</li>
-      </ul>
-      <div class="kbar">
-        <a class="btn btn-primary" href="http://onssenapi-web-ui.s3-website.eu-west-3.amazonaws.com/" target="_blank" rel="noopener">Demo</a>
-      </div>
-    </article>
-  </div>
-</section>
-
-
-<!-- Skills -->
-<section id="skills" class="container">
-  <h2>Technologies</h2>
-  <div class="grid grid-3">
-    <!-- Frontend -->
-    <div class="card">
-      <h3>Frontend Frameworks & Libraries</h3>
-      <div class="stack">
-        <span class="tag">Angular</span>
-        <span class="tag">Ionic</span>
-        <span class="tag">Bootstrap 5</span>
-        <span class="tag">Angular Material UI</span>
-      </div>
-    </div>
-
-    <!-- Programming Languages -->
-    <div class="card">
-      <h3>Programming Languages</h3>
-      <div class="stack">
-        <span class="tag">JavaScript</span>
-        <span class="tag">TypeScript</span>
-        <span class="tag">HTML5</span>
-        <span class="tag">CSS</span>
-      </div>
-    </div>
-
-    <!-- Databases -->
-    <div class="card">
-      <h3>Databases</h3>
-      <div class="stack">
-        <span class="tag">MongoDB</span>
-        <span class="tag">Mongoose</span>
-      </div>
-    </div>
-
-    <!-- Backend & Tools -->
-    <div class="card">
-      <h3>Backend & Tools</h3>
-      <div class="stack">
-        <span class="tag">Node.js</span>
-        <span class="tag">AWS (S3, EC2)</span>
-      </div>
-    </div>
-
-
-
-    <!-- Mobile -->
-    <div class="card">
-      <h3>Mobile</h3>
-      <div class="stack">
-        <span class="tag">Cordova</span>
-        <span class="tag">APK Generation</span>
-        <span class="tag"> Play Store</span>
-      </div>
-    </div>
-
-    <!-- Version Control -->
-    <div class="card">
-      <h3>Version Control </h3>
-      <div class="stack">
-        <span class="tag">Git</span>
-        <span class="tag">GitHub</span>
-        <span class="tag">GitLab</span>
-        <span class="tag">Azure DevOps</span>
-      </div>
-    </div>
-
-    <!-- Development Tools -->
-    <div class="card">
-      <h3>Development Tools / IDEs</h3>
-      <div class="stack">
-        <span class="tag">Visual Studio Code</span>
-      </div>
-    </div>
-
-    <!-- Operating Systems -->
-    <div class="card">
-      <h3>Operating Systems</h3>
-      <div class="stack">
-        <span class="tag">Windows</span>
-        <span class="tag">Linux</span>
-        <span class="tag">Ubuntu</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  <!-- About -->
-<section id="about" class="container about">
-  <h2>About Me</h2>
-  <div class="card">
-    <p>
-      I'm a frontend developer with expertise in Angular, Ionic, and modern UI frameworks.
-      I focus on building responsive, scalable, and user-friendly applications.
-      With strong problem-solving skills and teamwork experience, I aim to deliver business-driven solutions.
-    </p>
-  </div>
-</section>
+    </section>
 
 
     <!-- Contact -->
- <section id="contact" class="container">
-  <h2>Contact</h2>
-  <div class="card contact-card">
-    <p><strong>Email:</strong>
-      <a href="mailto:sivagopi821@gmail.com">sivagopi821@gmail.com</a>
-    </p>
-    <p><strong>Phone:</strong>
-      <a href="tel:+919341434674">+91 93441 34674</a>
-    </p>
-    <p>
-      <a class="btn btn-primary"
-         href="mailto:sivagopi821@gmail.com?subject=Project%20Inquiry%20for%20Angular%20%2B%20Ionic&body=Hi%20Sivaiah%2C%0D%0A%0D%0AI%20would%20like%20to%20discuss%20a%20new%20project.">
-        Start a project
-      </a>
-    </p>
-  </div>
-</section>
+    <section id="contact" class="container">
+      <h2>Contact</h2>
+      <div class="card contact-card">
+        <p><strong>Email:</strong>
+          <a href="mailto:sivagopi821@gmail.com">sivagopi821@gmail.com</a>
+        </p>
+        <p><strong>Phone:</strong>
+          <a href="tel:+919341434674">+91 93441 34674</a>
+        </p>
+        <p>
+          <a class="btn btn-primary"
+            href="mailto:sivagopi821@gmail.com?subject=Project%20Inquiry%20for%20Angular%20%2B%20Ionic&body=Hi%20Sivaiah%2C%0D%0A%0D%0AI%20would%20like%20to%20discuss%20a%20new%20project.">
+            Start a project
+          </a>
+        </p>
+      </div>
+    </section>
 
   </main>
 
@@ -657,9 +790,9 @@
     ↑
   </div>
 
- <footer class="footer container">
-  <p>© <span id="y"></span> Sivaiah · Built with passion for scalable web & mobile apps.</p>
-</footer>
+  <footer class="footer container">
+    <p>© <span id="y"></span> Sivaiah · Built with passion for scalable web & mobile apps.</p>
+  </footer>
 
 
   <script>
@@ -671,21 +804,21 @@
     const btn = document.getElementById('themeToggle');
     const themeIcon = document.querySelector('.theme-icon');
     const saved = localStorage.getItem('theme');
-    
-    if(saved){ 
-      root.setAttribute('data-theme', saved); 
+
+    if (saved) {
+      root.setAttribute('data-theme', saved);
       themeIcon.textContent = saved === 'light' ? '☀️' : '🌙';
     }
-    
-    btn.addEventListener('click',()=>{
+
+    btn.addEventListener('click', () => {
       const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-      if(next === 'dark'){ 
-        root.removeAttribute('data-theme'); 
-        localStorage.setItem('theme','dark');
+      if (next === 'dark') {
+        root.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'dark');
         themeIcon.textContent = '🌙';
-      } else { 
-        root.setAttribute('data-theme','light'); 
-        localStorage.setItem('theme','light');
+      } else {
+        root.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
         themeIcon.textContent = '☀️';
       }
     });
@@ -698,7 +831,7 @@
       } else {
         nav.classList.remove('scrolled');
       }
-      
+
       // Back to top button
       const backToTop = document.getElementById('backToTop');
       if (window.scrollY > 500) {
@@ -707,12 +840,12 @@
         backToTop.classList.remove('visible');
       }
     });
-    
+
     // Back to top functionality
     document.getElementById('backToTop').addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-    
+
     // Scroll animation for sections
     const sections = document.querySelectorAll('section');
     const observer = new IntersectionObserver((entries) => {
@@ -722,11 +855,11 @@
         }
       });
     }, { threshold: 0.1 });
-    
+
     sections.forEach(section => {
       observer.observe(section);
     });
-    
+
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -742,27 +875,28 @@
     });
   </script>
   <script>
-function downloadPDF() {
-  // Create hidden iframe
-  const iframe = document.createElement('iframe');
-  iframe.src = './Resume.html';
-  iframe.style.display = 'none';
-  document.body.appendChild(iframe);
+    function downloadPDF() {
+      // Create hidden iframe
+      const iframe = document.createElement('iframe');
+      iframe.src = './Resume.html';
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
 
-  iframe.onload = function () {
-    const element = iframe.contentDocument.querySelector('.resume');
-    const opt = {
-      margin: 0.5,
-      filename: 'Sivaiah_JG_Resume.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
-    };
-    html2pdf().set(opt).from(element).save().then(() => {
-      document.body.removeChild(iframe); // cleanup
-    });
-  };
-}
-</script>
+      iframe.onload = function () {
+        const element = iframe.contentDocument.querySelector('.resume');
+        const opt = {
+          margin: 0.5,
+          filename: 'Sivaiah_JG_Resume.pdf',
+          image: { type: 'jpeg', quality: 0.98 },
+          html2canvas: { scale: 2 },
+          jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+        };
+        html2pdf().set(opt).from(element).save().then(() => {
+          document.body.removeChild(iframe); // cleanup
+        });
+      };
+    }
+  </script>
 </body>
+
 </html>
